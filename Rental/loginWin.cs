@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Rental
 {
-    public partial class Form1 : Form
+    public partial class loginWin : Form
     {
-        public Form1()
+        public loginWin()
         {
             InitializeComponent();
+        }
+
+        private void goLogin_Click(object sender, EventArgs e)
+        {
+            new welcomeWin().Show();
+            this.Hide();
         }
     }
 }
