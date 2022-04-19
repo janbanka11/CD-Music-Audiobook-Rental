@@ -16,7 +16,9 @@ namespace Rental
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new welcomeWin());
+            Application.Run(new loginWin());
+            Environment.Exit(1);
+           
         }
     }
 }
