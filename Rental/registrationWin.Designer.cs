@@ -1,6 +1,6 @@
 ﻿namespace Rental
 {
-    partial class welcomeWin
+    partial class registrationWin
     {
         /// <summary>
         /// Required designer variable.
@@ -251,7 +251,7 @@
             this.label8.TabIndex = 24;
             this.label8.Text = "Username";
             // 
-            // welcomeWin
+            // registrationWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -278,7 +278,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "welcomeWin";
+            this.Name = "registrationWin";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

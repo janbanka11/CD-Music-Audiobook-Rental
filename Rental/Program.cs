@@ -6,19 +6,22 @@ using System.Windows.Forms;
 
 namespace Rental
 {
+    
     internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
+        /// 
+       
+            [STAThread]
+       
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginWin());
-            Environment.Exit(1);
-           
+            Application.Exit();
         }
     }
 }

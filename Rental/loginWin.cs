@@ -20,12 +20,6 @@ namespace Rental
             InitializeComponent();
         }
 
-        private void goLogin_Click(object sender, EventArgs e)
-        {
-            new welcomeWin().Show();
-            this.Hide();
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -35,8 +29,10 @@ namespace Rental
             SqlDataReader da = cmd.ExecuteReader();
             if(da.Read())
             {
-                new mainWindow().Show();
                 this.Hide();
+                var mainWin = new mainWin();
+                mainWin.Closed += (s, args) => this.Close();
+                mainWin.Show();
             }
             else
             {
@@ -45,6 +41,15 @@ namespace Rental
                 password.Text = "";
                 username.Focus();
             }
+            con.Close();
+        }
+
+        private void goRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var registrationWin = new registrationWin();
+            registrationWin.Closed += (s, args) => this.Close();
+            registrationWin.Show();
         }
     }
 }

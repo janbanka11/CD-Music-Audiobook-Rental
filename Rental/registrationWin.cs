@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 
 namespace Rental
 {
-    public partial class welcomeWin : Form
+    public partial class registrationWin : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-UOV7VTS; Initial Catalog=Rental;Integrated Security=True;");
         SqlCommand cmd;
        
-        public welcomeWin()
+        public registrationWin()
         {
             InitializeComponent();
         }
@@ -30,9 +30,10 @@ namespace Rental
 
         private void goLogin_Click(object sender, EventArgs e)
         {
-            new loginWin().Show();
-            new mainWindow().Show();
             this.Hide();
+            var loginWin = new loginWin();
+            loginWin.Closed += (s, args) => this.Close();
+            loginWin.Show();
         }
 
        
@@ -51,7 +52,6 @@ namespace Rental
                 cmd = new SqlCommand("insert into customer values " + "('" + userName.Text.Trim(' ') + "','" + password.Text + "','" + firstName.Text + "','" + lastName.Text + "','" + age.Text + "','" + telNumber.Text + "')", con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Registration sucessfull");
-                con.Close();
             }
             else
             {
@@ -65,6 +65,7 @@ namespace Rental
                 telNumber.Text = "";
 
             }
+            con.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

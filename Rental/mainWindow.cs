@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rental
 {
-    public partial class mainWindow : Form
+    public partial class mainWin : Form
     {
-        public mainWindow()
+        public mainWin()
         {
             InitializeComponent();
         }

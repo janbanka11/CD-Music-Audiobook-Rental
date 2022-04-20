@@ -35,7 +35,7 @@
             this.username = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.goLogin = new System.Windows.Forms.Button();
+            this.goRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -123,20 +123,20 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Welcome";
             // 
-            // goLogin
+            // goRegister
             // 
-            this.goLogin.BackColor = System.Drawing.Color.Transparent;
-            this.goLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.goLogin.FlatAppearance.BorderSize = 0;
-            this.goLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.goLogin.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goLogin.Location = new System.Drawing.Point(74, 385);
-            this.goLogin.Name = "goLogin";
-            this.goLogin.Size = new System.Drawing.Size(216, 23);
-            this.goLogin.TabIndex = 29;
-            this.goLogin.Text = "Register";
-            this.goLogin.UseVisualStyleBackColor = false;
-            this.goLogin.Click += new System.EventHandler(this.goLogin_Click);
+            this.goRegister.BackColor = System.Drawing.Color.Transparent;
+            this.goRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goRegister.FlatAppearance.BorderSize = 0;
+            this.goRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.goRegister.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goRegister.Location = new System.Drawing.Point(74, 385);
+            this.goRegister.Name = "goRegister";
+            this.goRegister.Size = new System.Drawing.Size(216, 23);
+            this.goRegister.TabIndex = 29;
+            this.goRegister.Text = "Register";
+            this.goRegister.UseVisualStyleBackColor = false;
+            this.goRegister.Click += new System.EventHandler(this.goRegister_Click);
             // 
             // loginWin
             // 
@@ -144,7 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(374, 452);
-            this.Controls.Add(this.goLogin);
+            this.Controls.Add(this.goRegister);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.password);
@@ -171,6 +171,6 @@
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button goLogin;
+        private System.Windows.Forms.Button goRegister;
     }
 }
