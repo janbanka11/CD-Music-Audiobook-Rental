@@ -46,48 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="loginWin.cs">
+    <Compile Include="Forms\loginWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginWin.Designer.cs">
+    <Compile Include="Forms\loginWin.Designer.cs">
       <DependentUpon>loginWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainWindow.cs">
+    <Compile Include="Forms\mainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainWindow.Designer.cs">
+    <Compile Include="Forms\mainWindow.Designer.cs">
       <DependentUpon>mainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="registrationWin.cs">
+    <Compile Include="Forms\registrationWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="registrationWin.Designer.cs">
+    <Compile Include="Forms\registrationWin.Designer.cs">
       <DependentUpon>registrationWin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="loginWin.resx">
+    <Compile Include="RentalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentalDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\loginWin.resx">
       <DependentUpon>loginWin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainWindow.resx">
+    <EmbeddedResource Include="Forms\mainWindow.resx">
       <DependentUpon>mainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="registrationWin.resx">
+    <EmbeddedResource Include="Forms\registrationWin.resx">
       <DependentUpon>registrationWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -96,6 +102,59 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RentalDataSet.xsc">
+      <DependentUpon>RentalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RentalDataSet.xss">
+      <DependentUpon>RentalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-record-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-5-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\literature-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\headphones-6-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smartphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

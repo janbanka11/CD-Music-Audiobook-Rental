@@ -18,6 +18,9 @@ namespace Rental
         public loginWin()
         {
             InitializeComponent();
+            TextBoxExtensions.CorrectHeight(username);
+            TextBoxExtensions.CorrectHeight(password);
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -51,5 +54,7 @@ namespace Rental
             registrationWin.Closed += (s, args) => this.Close();
             registrationWin.Show();
         }
+
+        
     }
 }
