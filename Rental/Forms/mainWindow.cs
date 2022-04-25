@@ -14,13 +14,10 @@ namespace Rental
 
     public partial class mainWin : Form
     {
-
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-UOV7VTS; Initial Catalog=Rental;Integrated Security=True;");
-        SqlCommand cmdd;
-        DataSet dataset = new DataSet();
         public mainWin()
         {
             InitializeComponent();
+            helloLabel.Text = "Hello, ";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,9 +29,8 @@ namespace Rental
 
         private void mainWin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'rentalDataSet.CUSTOMER' table. You can move, or remove it, as needed.
+            this.mOVIETableAdapter.Fill(this.rentalDataSet.MOVIE);
             this.cUSTOMERTableAdapter.Fill(this.rentalDataSet.CUSTOMER);
-
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -48,6 +44,21 @@ namespace Rental
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = cUSTOMERBindingSource1;
+            this.dataGridView1.AutoGenerateColumns = true;
+            //dataGridView1.Columns["username"].HeaderText = "new Username";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = mOVIEBindingSource;
+            this.dataGridView1.AutoGenerateColumns = true;
         }
     }
 }

@@ -12,25 +12,25 @@ namespace Rental
 {
     public partial class loginWin : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-UOV7VTS; Initial Catalog=Rental;Integrated Security=True;");
-        SqlCommand cmd;
-        SqlDataAdapter da = new SqlDataAdapter();
+       
+ 
         public loginWin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(500, 300);
             TextBoxExtensions.CorrectHeight(username);
             TextBoxExtensions.CorrectHeight(password);
-
         }
 
         private void loginButton_Click(object sender, EventArgs e)
-        {
-            con.Open();
-            string login = "select * from customer where username= '" + username.Text.Trim() + "' and password='" + password.Text.Trim() + "'";
-            cmd = new SqlCommand(login, con);
-           
-            SqlDataReader da = cmd.ExecuteReader();
-            if(da.Read())
+        {     
+            var usernameSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
+                .GetDataByUsername(username.Text.Trim());
+            var passwordSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
+                .GetDataByPassword(password.Text.Trim());
+
+            if (usernameSearch.Count > 0 && passwordSearch.Count > 0)
             {
                 this.Hide();
                 var mainWin = new mainWin();
@@ -44,7 +44,6 @@ namespace Rental
                 password.Text = "";
                 username.Focus();
             }
-            con.Close();
         }
 
         private void goRegister_Click(object sender, EventArgs e)

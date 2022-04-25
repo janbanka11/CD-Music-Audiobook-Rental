@@ -11,16 +11,14 @@ using System.Data.SqlClient;
 
 namespace Rental
 {
-   
     public partial class registrationWin : Form
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-UOV7VTS; Initial Catalog=Rental;Integrated Security=True;");
-        SqlCommand cmd;
-       
         public registrationWin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(500, 300);
         }
         private void registrationWin_Load(object sender, EventArgs e)
         {
@@ -32,7 +30,6 @@ namespace Rental
             TextBoxExtensions.CorrectHeight(password);
             TextBoxExtensions.CorrectHeight(confPassword);
         }
-
 
         private void goLogin_Click(object sender, EventArgs e)
         {
@@ -54,32 +51,36 @@ namespace Rental
                 lastName.Text == "" || password.Text == "" ||
                 confPassword.Text == "")
             {
-                MessageBox.Show("Please fill all information", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Please fill all information", "Sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (password.Text == confPassword.Text && Int32.Parse(age.Text) > 0
-                    && Int32.Parse(age.Text) < 120 && telNumber.Text.Length == 9)
+                if (password.Text != confPassword.Text)
                 {
-                    con.Open();
-                    cmd = new SqlCommand("insert into customer values " + "('" + userName.Text.Trim(' ') + "','" + password.Text + "','" + firstName.Text + "','" + lastName.Text + "','" + age.Text + "','" + telNumber.Text + "')", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Registration successful");
+                    MessageBox.Show("Passwords don't match!", "Sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    password.Text = "";
+                    confPassword.Text = "";
+                    password.Focus();
+                }
+                else if(Int32.Parse(age.Text) < 5 && Int32.Parse(age.Text) > 120)
+                {
+                    MessageBox.Show("Incorrect age!", "Sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    age.Text = "";
+                    age.Focus();
+                }
+                else if(telNumber.Text.Length != 9)
+                {
+                    MessageBox.Show("Incorrect phone number!", "Sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    telNumber.Text = "";
+                    telNumber.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect data, please try again", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    userName.Text = "";
-                    password.Text = "";
-                    confPassword.Text = "";
-                    firstName.Text = "";
-                    lastName.Text = "";
-                    age.Text = "";
-                    telNumber.Text = "";
-
+                    var registration = new RentalDataSetTableAdapters.CUSTOMERTableAdapter();
+                    registration.Insert(userName.Text.Trim(), password.Text.Trim(), firstName.Text.Trim(),
+                                        lastName.Text.Trim(), Int32.Parse(age.Text), telNumber.Text.Trim());
+                    MessageBox.Show("Registration successful");
                 }
-                con.Close();
             }
         }
 
