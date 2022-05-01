@@ -15,6 +15,10 @@ namespace Rental
     public partial class mainWin : Form
     {
         private string userNameText;
+        RentalDataSet.MOVIEDataTable dtMovie = new RentalDataSet.MOVIEDataTable();
+        RentalDataSet.CD_DISCDataTable dtCD = new RentalDataSet.CD_DISCDataTable();
+        RentalDataSet.AUDIOBOOKDataTable dtAudiobook = new RentalDataSet.AUDIOBOOKDataTable();
+
         public mainWin(string userName)
         {
             InitializeComponent();
@@ -28,13 +32,10 @@ namespace Rental
                 selectSettings.Visible = false;
             }
             userNameText = userName;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //var cmdd = new RentalDataSetTableAdapters.CUSTOMERTableAdapter();
-            //cmdd.Insert(textBox1.Text.Trim(),"d","d","d",25,"626555444");
-            //cmdd.Fill(this.rentalDataSet.CUSTOMER);
+            new RentalDataSetTableAdapters.MOVIETableAdapter().Fill(dtMovie);
+            new RentalDataSetTableAdapters.CD_DISCTableAdapter().Fill(dtCD);
+            new RentalDataSetTableAdapters.AUDIOBOOKTableAdapter().Fill(dtAudiobook);
+            dataGridView1.DataSource = dtMovie;
         }
 
         private void mainWin_Load(object sender, EventArgs e)
@@ -42,15 +43,8 @@ namespace Rental
             this.mOVIETableAdapter.Fill(this.rentalDataSet.MOVIE);
             this.cD_DISCTableAdapter.Fill(this.rentalDataSet.CD_DISC);
             this.aUDIOBOOKTableAdapter.Fill(this.rentalDataSet.AUDIOBOOK);
-            this.mOVIETableAdapter.Fill(this.rentalDataSet.MOVIE);
-            this.cD_DISCTableAdapter.Fill(this.rentalDataSet.CD_DISC);
-            this.aUDIOBOOKTableAdapter.Fill(this.rentalDataSet.AUDIOBOOK);
-            this.aUDIOBOOKTableAdapter.Fill(this.rentalDataSet.AUDIOBOOK);
-            this.cD_DISCTableAdapter.Fill(this.rentalDataSet.CD_DISC);
-            this.mOVIETableAdapter.Fill(this.rentalDataSet.MOVIE);
-            this.mOVIETableAdapter.Fill(this.rentalDataSet.MOVIE);
-            this.cD_DISCTableAdapter.Fill(this.rentalDataSet.CD_DISC);
         }
+
         private void selectMovie_Click(object sender, EventArgs e)
         {
             if (dataGridView1.DataSource != mOVIEBindingSource)
@@ -60,6 +54,7 @@ namespace Rental
                 dataGridView1.DataSource = mOVIEBindingSource;
             }
         }
+
         private void selectMusic_Click(object sender, EventArgs e)
         {
             if (dataGridView1.DataSource != cDDISCBindingSource)
@@ -83,19 +78,39 @@ namespace Rental
         private void rentNow_Click(object sender, EventArgs e)
         {
             int rowindex = dataGridView1.CurrentCell.RowIndex;
-            int columnindex = dataGridView1.CurrentCell.ColumnIndex - 1;
-            var cellValue = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
-            if (dataGridView1.DataSource == mOVIEBindingSource)
+            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
+            var cellValue = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
+
+            if (dataGridView1.DataSource == dtMovie || dataGridView1.DataSource == mOVIEBindingSource)
             {
                 new RentalDataSetTableAdapters.RENTAL_MOVIETableAdapter()
                     .InsertRentalMovie(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
                 new RentalDataSetTableAdapters.RENTAL_MOVIETableAdapter().UpdateRentedIDMovie(Int32.Parse(cellValue));
+                var a = new RentalDataSetTableAdapters.MOVIETableAdapter();
+                a.Fill(dtMovie);
+                dataGridView1.DataSource = dtMovie;
             }
-            MessageBox.Show("Rented successfuly!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            else if (dataGridView1.DataSource == dtCD || dataGridView1.DataSource == cDDISCBindingSource)
+            {
+                new RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter().InsertRentalCD(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
+                new RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter().UpdateRentedID_CD(Int32.Parse(cellValue));
+                var a = new RentalDataSetTableAdapters.CD_DISCTableAdapter();
+                a.Fill(dtCD);
+                dataGridView1.DataSource = dtCD;
+            }
+            else
+            {
+                new RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter().InsertRentalAudiobook(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
+                new RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter().UpdateRentedID_Audiobook(Int32.Parse(cellValue));
+                var a = new RentalDataSetTableAdapters.AUDIOBOOKTableAdapter();
+                a.Fill(dtAudiobook);
+                dataGridView1.DataSource = dtAudiobook;
+            }
+        }
+
+        private void selectRented_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
-
-    
-
