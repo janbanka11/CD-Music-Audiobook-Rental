@@ -29,6 +29,7 @@ namespace Rental
             TextBoxExtensions.CorrectHeight(telNumber);
             TextBoxExtensions.CorrectHeight(password);
             TextBoxExtensions.CorrectHeight(confPassword);
+
         }
 
         private void goLogin_Click(object sender, EventArgs e)
@@ -46,12 +47,20 @@ namespace Rental
 
         private void registerButton_Click(object sender, EventArgs e)
         {
+            var usernameSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
+                .GetDataByUsername(userName.Text);
             if (userName.Text == "" || age.Text == "" ||
                 telNumber.Text == "" || firstName.Text == "" || 
                 lastName.Text == "" || password.Text == "" ||
                 confPassword.Text == "")
             {
                 MessageBox.Show("Please fill all information", "Sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(usernameSearch.Count > 0)
+            {
+                MessageBox.Show("User already exists!", "Sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                userName.Text = "";
+                userName.Focus();
             }
             else
             {
@@ -77,23 +86,26 @@ namespace Rental
                 else
                 {
                     var registration = new RentalDataSetTableAdapters.CUSTOMERTableAdapter();
-                    registration.Insert(userName.Text.Trim(), password.Text.Trim(), firstName.Text.Trim(),
-                                        lastName.Text.Trim(), Int32.Parse(age.Text), telNumber.Text.Trim());
+                    registration.Insert(userName.Text, password.Text, firstName.Text,
+                                        lastName.Text, Int32.Parse(age.Text), telNumber.Text);
                     MessageBox.Show("Registration successful");
                 }
             }
+        }
+        protected void userName_SetText()
+        {
+            this.userName.Text = "Username";
+            userName.ForeColor = Color.Gray;
         }
 
         private void age_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-
         }
 
         private void telNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
     }
 }

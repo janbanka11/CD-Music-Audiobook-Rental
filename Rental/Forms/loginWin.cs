@@ -12,8 +12,7 @@ namespace Rental
 {
     public partial class loginWin : Form
     {
-       
- 
+
         public loginWin()
         {
             InitializeComponent();
@@ -24,16 +23,18 @@ namespace Rental
         }
 
         private void loginButton_Click(object sender, EventArgs e)
-        {     
+        {
+            
+
             var usernameSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
-                .GetDataByUsername(username.Text.Trim());
+                .GetDataByUsername(username.Text);
             var passwordSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
-                .GetDataByPassword(password.Text.Trim());
+                .GetDataByPassword(password.Text);
 
             if (usernameSearch.Count > 0 && passwordSearch.Count > 0)
             {
                 this.Hide();
-                var mainWin = new mainWin();
+                var mainWin = new mainWin(username.Text.ToString());
                 mainWin.Closed += (s, args) => this.Close();
                 mainWin.Show();
             }

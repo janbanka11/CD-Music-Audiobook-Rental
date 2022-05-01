@@ -84,14 +84,14 @@
             this.confPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.confPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.confPassword.Font = new System.Drawing.Font("Roboto", 14F);
-            this.confPassword.Location = new System.Drawing.Point(491, 293);
+            this.confPassword.Location = new System.Drawing.Point(491, 270);
             this.confPassword.Margin = new System.Windows.Forms.Padding(4);
             this.confPassword.MaximumSize = new System.Drawing.Size(230, 50);
             this.confPassword.MaxLength = 25;
             this.confPassword.MinimumSize = new System.Drawing.Size(230, 30);
             this.confPassword.Name = "confPassword";
             this.confPassword.PasswordChar = '*';
-            this.confPassword.Size = new System.Drawing.Size(230, 30);
+            this.confPassword.Size = new System.Drawing.Size(230, 23);
             this.confPassword.TabIndex = 15;
             this.confPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -100,7 +100,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label4.Location = new System.Drawing.Point(540, 274);
+            this.label4.Location = new System.Drawing.Point(540, 251);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 19);
@@ -112,13 +112,13 @@
             this.password.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.password.Font = new System.Drawing.Font("Roboto", 14F);
-            this.password.Location = new System.Drawing.Point(244, 293);
+            this.password.Location = new System.Drawing.Point(244, 270);
             this.password.Margin = new System.Windows.Forms.Padding(4);
             this.password.MaxLength = 25;
             this.password.MinimumSize = new System.Drawing.Size(230, 30);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(230, 30);
+            this.password.Size = new System.Drawing.Size(230, 23);
             this.password.TabIndex = 13;
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -127,7 +127,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label3.Location = new System.Drawing.Point(311, 274);
+            this.label3.Location = new System.Drawing.Point(311, 251);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 19);
@@ -145,7 +145,7 @@
             this.firstName.MaxLength = 20;
             this.firstName.MinimumSize = new System.Drawing.Size(230, 30);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(230, 30);
+            this.firstName.Size = new System.Drawing.Size(230, 23);
             this.firstName.TabIndex = 11;
             this.firstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -182,10 +182,10 @@
             this.goLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goLogin.Font = new System.Drawing.Font("Roboto", 9.75F);
             this.goLogin.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.goLogin.Location = new System.Drawing.Point(384, 415);
+            this.goLogin.Location = new System.Drawing.Point(375, 414);
             this.goLogin.Margin = new System.Windows.Forms.Padding(4);
             this.goLogin.Name = "goLogin";
-            this.goLogin.Size = new System.Drawing.Size(185, 34);
+            this.goLogin.Size = new System.Drawing.Size(207, 34);
             this.goLogin.TabIndex = 17;
             this.goLogin.Text = "Already have an account";
             this.goLogin.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.lastName.MaxLength = 20;
             this.lastName.MinimumSize = new System.Drawing.Size(230, 30);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(230, 30);
+            this.lastName.Size = new System.Drawing.Size(230, 23);
             this.lastName.TabIndex = 19;
             this.lastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -223,12 +223,12 @@
             this.telNumber.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.telNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.telNumber.Font = new System.Drawing.Font("Roboto", 14F);
-            this.telNumber.Location = new System.Drawing.Point(384, 122);
+            this.telNumber.Location = new System.Drawing.Point(375, 200);
             this.telNumber.Margin = new System.Windows.Forms.Padding(4);
             this.telNumber.MaxLength = 9;
             this.telNumber.MinimumSize = new System.Drawing.Size(230, 30);
             this.telNumber.Name = "telNumber";
-            this.telNumber.Size = new System.Drawing.Size(230, 30);
+            this.telNumber.Size = new System.Drawing.Size(230, 23);
             this.telNumber.TabIndex = 21;
             this.telNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.telNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telNumber_KeyPress);
@@ -238,7 +238,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.Window;
             this.label5.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label5.Location = new System.Drawing.Point(452, 103);
+            this.label5.Location = new System.Drawing.Point(443, 181);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 19);
@@ -251,12 +251,12 @@
             this.age.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.age.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.age.Font = new System.Drawing.Font("Roboto", 14F);
-            this.age.Location = new System.Drawing.Point(456, 176);
+            this.age.Location = new System.Drawing.Point(563, 122);
             this.age.Margin = new System.Windows.Forms.Padding(4);
             this.age.MaxLength = 3;
             this.age.MinimumSize = new System.Drawing.Size(66, 30);
             this.age.Name = "age";
-            this.age.Size = new System.Drawing.Size(66, 30);
+            this.age.Size = new System.Drawing.Size(82, 23);
             this.age.TabIndex = 23;
             this.age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.age_KeyPress);
@@ -266,7 +266,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.Window;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label6.Location = new System.Drawing.Point(469, 157);
+            this.label6.Location = new System.Drawing.Point(587, 103);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 19);
@@ -278,7 +278,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Window;
             this.label8.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label8.Location = new System.Drawing.Point(453, 209);
+            this.label8.Location = new System.Drawing.Point(313, 101);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 19);
@@ -291,12 +291,12 @@
             this.userName.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userName.Font = new System.Drawing.Font("Roboto", 14F);
-            this.userName.Location = new System.Drawing.Point(384, 232);
+            this.userName.Location = new System.Drawing.Point(244, 124);
             this.userName.Margin = new System.Windows.Forms.Padding(4);
             this.userName.MaxLength = 25;
             this.userName.MinimumSize = new System.Drawing.Size(230, 30);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(230, 30);
+            this.userName.Size = new System.Drawing.Size(230, 23);
             this.userName.TabIndex = 25;
             this.userName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -326,7 +326,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::Rental.Properties.Resources._lock;
-            this.pictureBox5.Location = new System.Drawing.Point(201, 293);
+            this.pictureBox5.Location = new System.Drawing.Point(201, 270);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(36, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -337,7 +337,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::Rental.Properties.Resources.smartphone;
-            this.pictureBox4.Location = new System.Drawing.Point(341, 122);
+            this.pictureBox4.Location = new System.Drawing.Point(332, 200);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(36, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -348,7 +348,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Rental.Properties.Resources.id_badge;
-            this.pictureBox2.Location = new System.Drawing.Point(341, 232);
+            this.pictureBox2.Location = new System.Drawing.Point(201, 124);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(36, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -359,7 +359,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Rental.Properties.Resources.calendar;
-            this.pictureBox3.Location = new System.Drawing.Point(413, 176);
+            this.pictureBox3.Location = new System.Drawing.Point(520, 122);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
