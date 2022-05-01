@@ -12,7 +12,7 @@ namespace Rental
 {
     public partial class loginWin : Form
     {
-
+       
         public loginWin()
         {
             InitializeComponent();
@@ -21,7 +21,6 @@ namespace Rental
             TextBoxExtensions.CorrectHeight(username);
             TextBoxExtensions.CorrectHeight(password);
         }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             

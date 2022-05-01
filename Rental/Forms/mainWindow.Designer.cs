@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainWin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -49,12 +50,12 @@
             this.rentNow = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rentalDataSet = new Rental.RentalDataSet();
-            this.mOVIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mOVIETableAdapter = new Rental.RentalDataSetTableAdapters.MOVIETableAdapter();
-            this.cDDISCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cD_DISCTableAdapter = new Rental.RentalDataSetTableAdapters.CD_DISCTableAdapter();
             this.aUDIOBOOKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aUDIOBOOKTableAdapter = new Rental.RentalDataSetTableAdapters.AUDIOBOOKTableAdapter();
+            this.cDDISCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cD_DISCTableAdapter = new Rental.RentalDataSetTableAdapters.CD_DISCTableAdapter();
+            this.mOVIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mOVIETableAdapter = new Rental.RentalDataSetTableAdapters.MOVIETableAdapter();
             this.idmovieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +63,7 @@
             this.directorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.relasedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtitleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isrentedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -71,9 +72,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDDISCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDIOBOOKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDDISCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,7 +97,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 532);
+            this.panel1.Size = new System.Drawing.Size(194, 589);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox3
@@ -290,9 +291,9 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Location = new System.Drawing.Point(194, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(848, 100);
+            this.panel2.Size = new System.Drawing.Size(938, 100);
             this.panel2.TabIndex = 1;
             // 
             // rentNow
@@ -303,13 +304,14 @@
             this.rentNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rentNow.Font = new System.Drawing.Font("Roboto", 18F);
             this.rentNow.ForeColor = System.Drawing.Color.White;
-            this.rentNow.Location = new System.Drawing.Point(537, 482);
+            this.rentNow.Location = new System.Drawing.Point(591, 500);
             this.rentNow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rentNow.Name = "rentNow";
             this.rentNow.Size = new System.Drawing.Size(154, 38);
             this.rentNow.TabIndex = 27;
             this.rentNow.Text = "Rent now";
             this.rentNow.UseVisualStyleBackColor = false;
+            this.rentNow.Click += new System.EventHandler(this.rentNow_Click);
             // 
             // dataGridView1
             // 
@@ -318,11 +320,20 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idmovieDataGridViewTextBoxColumn,
@@ -332,38 +343,24 @@
             this.directorDataGridViewTextBoxColumn,
             this.relasedateDataGridViewTextBoxColumn,
             this.subtitleDataGridViewCheckBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
+            this.isrentedDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.mOVIEBindingSource;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(206, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(200, 106);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(830, 370);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(920, 370);
             this.dataGridView1.TabIndex = 28;
             // 
             // rentalDataSet
             // 
             this.rentalDataSet.DataSetName = "RentalDataSet";
             this.rentalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mOVIEBindingSource
-            // 
-            this.mOVIEBindingSource.DataMember = "MOVIE";
-            this.mOVIEBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // mOVIETableAdapter
-            // 
-            this.mOVIETableAdapter.ClearBeforeFill = true;
-            // 
-            // cDDISCBindingSource
-            // 
-            this.cDDISCBindingSource.DataMember = "CD_DISC";
-            this.cDDISCBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // cD_DISCTableAdapter
-            // 
-            this.cD_DISCTableAdapter.ClearBeforeFill = true;
             // 
             // aUDIOBOOKBindingSource
             // 
@@ -374,13 +371,32 @@
             // 
             this.aUDIOBOOKTableAdapter.ClearBeforeFill = true;
             // 
+            // cDDISCBindingSource
+            // 
+            this.cDDISCBindingSource.DataMember = "CD_DISC";
+            this.cDDISCBindingSource.DataSource = this.rentalDataSet;
+            // 
+            // cD_DISCTableAdapter
+            // 
+            this.cD_DISCTableAdapter.ClearBeforeFill = true;
+            // 
+            // mOVIEBindingSource
+            // 
+            this.mOVIEBindingSource.DataMember = "MOVIE";
+            this.mOVIEBindingSource.DataSource = this.rentalDataSet;
+            // 
+            // mOVIETableAdapter
+            // 
+            this.mOVIETableAdapter.ClearBeforeFill = true;
+            // 
             // idmovieDataGridViewTextBoxColumn
             // 
             this.idmovieDataGridViewTextBoxColumn.DataPropertyName = "id_movie";
             this.idmovieDataGridViewTextBoxColumn.HeaderText = "id_movie";
             this.idmovieDataGridViewTextBoxColumn.Name = "idmovieDataGridViewTextBoxColumn";
             this.idmovieDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idmovieDataGridViewTextBoxColumn.Width = 97;
+            this.idmovieDataGridViewTextBoxColumn.Visible = false;
+            this.idmovieDataGridViewTextBoxColumn.Width = 78;
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -430,21 +446,21 @@
             this.subtitleDataGridViewCheckBoxColumn.ReadOnly = true;
             this.subtitleDataGridViewCheckBoxColumn.Width = 67;
             // 
-            // descriptionDataGridViewTextBoxColumn
+            // isrentedDataGridViewCheckBoxColumn
             // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 112;
+            this.isrentedDataGridViewCheckBoxColumn.DataPropertyName = "is_rented";
+            this.isrentedDataGridViewCheckBoxColumn.HeaderText = "is_rented";
+            this.isrentedDataGridViewCheckBoxColumn.Name = "isrentedDataGridViewCheckBoxColumn";
+            this.isrentedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isrentedDataGridViewCheckBoxColumn.Visible = false;
+            this.isrentedDataGridViewCheckBoxColumn.Width = 78;
             // 
             // mainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1048, 532);
+            this.ClientSize = new System.Drawing.Size(1132, 589);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rentNow);
             this.Controls.Add(this.panel2);
@@ -465,9 +481,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDDISCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDIOBOOKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDDISCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,13 +507,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button rentNow;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private RentalDataSet rentalDataSet;
-        private System.Windows.Forms.BindingSource mOVIEBindingSource;
-        private RentalDataSetTableAdapters.MOVIETableAdapter mOVIETableAdapter;
-        private System.Windows.Forms.BindingSource cDDISCBindingSource;
-        private RentalDataSetTableAdapters.CD_DISCTableAdapter cD_DISCTableAdapter;
         private System.Windows.Forms.BindingSource aUDIOBOOKBindingSource;
         private RentalDataSetTableAdapters.AUDIOBOOKTableAdapter aUDIOBOOKTableAdapter;
+        private System.Windows.Forms.BindingSource cDDISCBindingSource;
+        private RentalDataSetTableAdapters.CD_DISCTableAdapter cD_DISCTableAdapter;
+        private System.Windows.Forms.BindingSource mOVIEBindingSource;
+        private RentalDataSetTableAdapters.MOVIETableAdapter mOVIETableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmovieDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
@@ -505,6 +522,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn directorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn relasedateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn subtitleDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isrentedDataGridViewCheckBoxColumn;
     }
 }
