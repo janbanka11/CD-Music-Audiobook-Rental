@@ -12,6 +12,10 @@
 
 namespace Rental.RentalDataSetTableAdapters
 {
+    partial class RENTAL_CD_DISCTableAdapter
+    {
+    }
+
     partial class RENTAL_MOVIETableAdapter
     {
     }

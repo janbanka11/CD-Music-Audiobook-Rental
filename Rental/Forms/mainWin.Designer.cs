@@ -89,7 +89,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(194, 589);
+            this.panel1.Size = new System.Drawing.Size(194, 560);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox3
@@ -263,7 +263,7 @@
             this.selectSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectSettings.Font = new System.Drawing.Font("Roboto", 17F);
             this.selectSettings.ForeColor = System.Drawing.Color.White;
-            this.selectSettings.Location = new System.Drawing.Point(4, 557);
+            this.selectSettings.Location = new System.Drawing.Point(4, 519);
             this.selectSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectSettings.Name = "selectSettings";
             this.selectSettings.Size = new System.Drawing.Size(33, 29);
@@ -376,7 +376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1132, 589);
+            this.ClientSize = new System.Drawing.Size(1132, 560);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rentNow);
             this.Controls.Add(this.panel2);
@@ -385,7 +385,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "mainWin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rental";
             this.Load += new System.EventHandler(this.mainWin_Load);
             this.panel1.ResumeLayout(false);

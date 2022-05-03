@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Threading;
 namespace Rental
 {
-
+    //main window with all functionality that shows up after logging in
     public partial class mainWin : Form
     {
         private string userNameText;
@@ -22,16 +22,20 @@ namespace Rental
         public mainWin(string userName)
         {
             InitializeComponent();
+            //hello textbox functionality
             if (userName.Length < 10)
             {
                 helloLabel.Text = "Hi " + userName;
             }
+            //more settings for admin user only (WIP, won't be like that)
             if (userName != "admin")
             {
                 selectSettings.Enabled = false;
                 selectSettings.Visible = false;
             }
+
             userNameText = userName;
+            // filling local datatables with content from database
             new RentalDataSetTableAdapters.MOVIETableAdapter().Fill(dtMovie);
             new RentalDataSetTableAdapters.CD_DISCTableAdapter().Fill(dtCD);
             new RentalDataSetTableAdapters.AUDIOBOOKTableAdapter().Fill(dtAudiobook);
@@ -47,70 +51,83 @@ namespace Rental
 
         private void selectMovie_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.DataSource != mOVIEBindingSource)
+            //changing datagridview data source if a button is clicked
+            if (dataGridView1.DataSource != mOVIEBindingSource && dataGridView1.DataSource != dtMovie)
             {
                 this.dataGridView1.AutoGenerateColumns = true;
                 this.dataGridView1.Columns.Clear();
-                dataGridView1.DataSource = mOVIEBindingSource;
+                dataGridView1.DataSource = dtMovie;
             }
         }
 
         private void selectMusic_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.DataSource != cDDISCBindingSource)
+            if (dataGridView1.DataSource != cDDISCBindingSource && dataGridView1.DataSource != dtCD)
             {
                 this.dataGridView1.AutoGenerateColumns = true;
                 this.dataGridView1.Columns.Clear();
-                dataGridView1.DataSource = cDDISCBindingSource;
+                dataGridView1.DataSource = dtCD;
             }
         }
 
         private void selectAudiobook_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.DataSource != aUDIOBOOKBindingSource)
+            if (dataGridView1.DataSource != aUDIOBOOKBindingSource && dataGridView1.DataSource != dtAudiobook)
             {
                 this.dataGridView1.AutoGenerateColumns = true;
                 this.dataGridView1.Columns.Clear();
-                dataGridView1.DataSource = aUDIOBOOKBindingSource;
+                dataGridView1.DataSource = dtAudiobook;
             }
         }
 
         private void rentNow_Click(object sender, EventArgs e)
         {
+            //getting id of movie / cd / audiobook for a tabledata adapter to work
             int rowindex = dataGridView1.CurrentCell.RowIndex;
-            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
             var cellValue = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
 
             if (dataGridView1.DataSource == dtMovie || dataGridView1.DataSource == mOVIEBindingSource)
             {
+                //insertRentalMovie is custom query to insert a row of relation data between user and movie tables to a table rental_movie
                 new RentalDataSetTableAdapters.RENTAL_MOVIETableAdapter()
                     .InsertRentalMovie(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
-                new RentalDataSetTableAdapters.RENTAL_MOVIETableAdapter().UpdateRentedIDMovie(Int32.Parse(cellValue));
+                //updateRentedIDMovie updates is_rented column in movie table to 1 making it not visible in datagridview anymore
+                new RentalDataSetTableAdapters.RENTAL_MOVIETableAdapter()
+                    .UpdateRentedIDMovie(Int32.Parse(cellValue));
+                //updating datagridview after renting something
                 var a = new RentalDataSetTableAdapters.MOVIETableAdapter();
                 a.Fill(dtMovie);
                 dataGridView1.DataSource = dtMovie;
             }
             else if (dataGridView1.DataSource == dtCD || dataGridView1.DataSource == cDDISCBindingSource)
             {
-                new RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter().InsertRentalCD(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
-                new RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter().UpdateRentedID_CD(Int32.Parse(cellValue));
+                //same as above but for cd table
+                new RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter()
+                    .InsertRentalCD(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
+                new RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter()
+                    .UpdateRentedID_CD(Int32.Parse(cellValue));
                 var a = new RentalDataSetTableAdapters.CD_DISCTableAdapter();
                 a.Fill(dtCD);
                 dataGridView1.DataSource = dtCD;
             }
             else
             {
-                new RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter().InsertRentalAudiobook(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
-                new RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter().UpdateRentedID_Audiobook(Int32.Parse(cellValue));
+                //same as above but for audiobook table
+                new RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter()
+                    .InsertRentalAudiobook(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
+                new RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter()
+                    .UpdateRentedID_Audiobook(Int32.Parse(cellValue));
                 var a = new RentalDataSetTableAdapters.AUDIOBOOKTableAdapter();
                 a.Fill(dtAudiobook);
                 dataGridView1.DataSource = dtAudiobook;
             }
+            MessageBox.Show("Rented successfuly!", "Sucesss", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void selectRented_Click(object sender, EventArgs e)
-        {
-
+        { 
+            var rentedWin = new rentedWin(userNameText);
+            rentedWin.Show();
         }
     }
 }
