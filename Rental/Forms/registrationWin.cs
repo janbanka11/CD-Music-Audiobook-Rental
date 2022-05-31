@@ -47,8 +47,11 @@ namespace Rental
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            var usernameSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
+           // var usernameSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
+           //     .GetDataByUsername(userName.Text);
+            var usernameSearch = new RentalDBDataSetTableAdapters.CUSTOMERTableAdapter()
                 .GetDataByUsername(userName.Text);
+
             if (userName.Text == "" || age.Text == "" ||
                 telNumber.Text == "" || firstName.Text == "" || 
                 lastName.Text == "" || password.Text == "" ||
@@ -85,17 +88,13 @@ namespace Rental
                 }
                 else
                 {
-                    var registration = new RentalDataSetTableAdapters.CUSTOMERTableAdapter();
+                    //var registration = new RentalDataSetTableAdapters.CUSTOMERTableAdapter();
+                    var registration = new RentalDBDataSetTableAdapters.CUSTOMERTableAdapter();
                     registration.Insert(userName.Text, password.Text, firstName.Text,
-                                        lastName.Text, Int32.Parse(age.Text), telNumber.Text);
+                                        lastName.Text, Int32.Parse(age.Text), Int32.Parse(telNumber.Text));
                     MessageBox.Show("Registration successful");
                 }
             }
-        }
-        protected void userName_SetText()
-        {
-            this.userName.Text = "Username";
-            userName.ForeColor = Color.Gray;
         }
 
         private void age_KeyPress(object sender, KeyPressEventArgs e)

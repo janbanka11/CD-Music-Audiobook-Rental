@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainWin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.userSettings = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.selectRented = new System.Windows.Forms.Button();
@@ -49,29 +50,21 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.rentNow = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mOVIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentalDataSet = new Rental.RentalDataSet();
-            this.aUDIOBOOKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aUDIOBOOKTableAdapter = new Rental.RentalDataSetTableAdapters.AUDIOBOOKTableAdapter();
-            this.cDDISCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cD_DISCTableAdapter = new Rental.RentalDataSetTableAdapters.CD_DISCTableAdapter();
-            this.mOVIETableAdapter = new Rental.RentalDataSetTableAdapters.MOVIETableAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aUDIOBOOKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDDISCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.userSettings);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.selectRented);
@@ -89,8 +82,35 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(194, 560);
+            this.panel1.Size = new System.Drawing.Size(188, 560);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Rental.Properties.Resources.icons8_thick_vertical_line_50;
+            this.pictureBox2.Location = new System.Drawing.Point(18, 454);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(19, 51);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabStop = false;
+            // 
+            // userSettings
+            // 
+            this.userSettings.BackColor = System.Drawing.Color.Transparent;
+            this.userSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userSettings.FlatAppearance.BorderSize = 0;
+            this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userSettings.Font = new System.Drawing.Font("Roboto", 15F);
+            this.userSettings.ForeColor = System.Drawing.Color.White;
+            this.userSettings.Location = new System.Drawing.Point(35, 464);
+            this.userSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.userSettings.Name = "userSettings";
+            this.userSettings.Size = new System.Drawing.Size(109, 31);
+            this.userSettings.TabIndex = 45;
+            this.userSettings.Text = "Settings";
+            this.userSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userSettings.UseVisualStyleBackColor = false;
             // 
             // pictureBox3
             // 
@@ -284,9 +304,9 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(194, 0);
+            this.panel2.Location = new System.Drawing.Point(188, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(938, 100);
+            this.panel2.Size = new System.Drawing.Size(897, 112);
             this.panel2.TabIndex = 1;
             // 
             // rentNow
@@ -297,7 +317,7 @@
             this.rentNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rentNow.Font = new System.Drawing.Font("Roboto", 18F);
             this.rentNow.ForeColor = System.Drawing.Color.White;
-            this.rentNow.Location = new System.Drawing.Point(591, 500);
+            this.rentNow.Location = new System.Drawing.Point(567, 510);
             this.rentNow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rentNow.Name = "rentNow";
             this.rentNow.Size = new System.Drawing.Size(154, 38);
@@ -328,7 +348,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(200, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(194, 124);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -336,47 +356,15 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(920, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(879, 370);
             this.dataGridView1.TabIndex = 28;
-            // 
-            // mOVIEBindingSource
-            // 
-            this.mOVIEBindingSource.DataMember = "MOVIE";
-            this.mOVIEBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // rentalDataSet
-            // 
-            this.rentalDataSet.DataSetName = "RentalDataSet";
-            this.rentalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aUDIOBOOKBindingSource
-            // 
-            this.aUDIOBOOKBindingSource.DataMember = "AUDIOBOOK";
-            this.aUDIOBOOKBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // aUDIOBOOKTableAdapter
-            // 
-            this.aUDIOBOOKTableAdapter.ClearBeforeFill = true;
-            // 
-            // cDDISCBindingSource
-            // 
-            this.cDDISCBindingSource.DataMember = "CD_DISC";
-            this.cDDISCBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // cD_DISCTableAdapter
-            // 
-            this.cD_DISCTableAdapter.ClearBeforeFill = true;
-            // 
-            // mOVIETableAdapter
-            // 
-            this.mOVIETableAdapter.ClearBeforeFill = true;
             // 
             // mainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1132, 560);
+            this.ClientSize = new System.Drawing.Size(1085, 560);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rentNow);
             this.Controls.Add(this.panel2);
@@ -392,16 +380,13 @@
             this.Load += new System.EventHandler(this.mainWin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aUDIOBOOKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDDISCBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,14 +410,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button rentNow;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private RentalDataSet rentalDataSet;
-        private System.Windows.Forms.BindingSource aUDIOBOOKBindingSource;
-        private RentalDataSetTableAdapters.AUDIOBOOKTableAdapter aUDIOBOOKTableAdapter;
-        private System.Windows.Forms.BindingSource cDDISCBindingSource;
-        private RentalDataSetTableAdapters.CD_DISCTableAdapter cD_DISCTableAdapter;
-        private System.Windows.Forms.BindingSource mOVIEBindingSource;
-        private RentalDataSetTableAdapters.MOVIETableAdapter mOVIETableAdapter;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isrentedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button userSettings;
     }
 }

@@ -29,7 +29,6 @@ namespace Rental
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,32 +39,9 @@ namespace Rental
             this.dataGridViewMusic = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewAudiobook = new System.Windows.Forms.DataGridView();
-            this.rENTALMOVIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentalDataSet = new Rental.RentalDataSet();
-            this.rENTAL_MOVIETableAdapter = new Rental.RentalDataSetTableAdapters.RENTAL_MOVIETableAdapter();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idmovieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentalfromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentaltoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rENTALCDDISCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rENTAL_CD_DISCTableAdapter = new Rental.RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter();
-            this.usernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentalfromDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentaltoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rENTALAUDIOBOOKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rENTAL_AUDIOBOOKTableAdapter = new Rental.RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter();
-            this.usernameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idaudiobookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentalfromDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentaltoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAudiobook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rENTALMOVIEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rENTALCDDISCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rENTALAUDIOBOOKBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewMovie
@@ -74,7 +50,6 @@ namespace Rental
             this.dataGridViewMovie.AllowUserToDeleteRows = false;
             this.dataGridViewMovie.AllowUserToResizeColumns = false;
             this.dataGridViewMovie.AllowUserToResizeRows = false;
-            this.dataGridViewMovie.AutoGenerateColumns = false;
             this.dataGridViewMovie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewMovie.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewMovie.BackgroundColor = System.Drawing.Color.White;
@@ -90,12 +65,6 @@ namespace Rental
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewMovie.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMovie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn,
-            this.idmovieDataGridViewTextBoxColumn,
-            this.rentalfromDataGridViewTextBoxColumn,
-            this.rentaltoDataGridViewTextBoxColumn});
-            this.dataGridViewMovie.DataSource = this.rENTALMOVIEBindingSource;
             this.dataGridViewMovie.GridColor = System.Drawing.Color.White;
             this.dataGridViewMovie.Location = new System.Drawing.Point(12, 49);
             this.dataGridViewMovie.MultiSelect = false;
@@ -136,7 +105,6 @@ namespace Rental
             this.dataGridViewMusic.AllowUserToDeleteRows = false;
             this.dataGridViewMusic.AllowUserToResizeColumns = false;
             this.dataGridViewMusic.AllowUserToResizeRows = false;
-            this.dataGridViewMusic.AutoGenerateColumns = false;
             this.dataGridViewMusic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewMusic.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewMusic.BackgroundColor = System.Drawing.Color.White;
@@ -152,12 +120,6 @@ namespace Rental
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewMusic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewMusic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMusic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn1,
-            this.idcdDataGridViewTextBoxColumn,
-            this.rentalfromDataGridViewTextBoxColumn1,
-            this.rentaltoDataGridViewTextBoxColumn1});
-            this.dataGridViewMusic.DataSource = this.rENTALCDDISCBindingSource;
             this.dataGridViewMusic.GridColor = System.Drawing.Color.White;
             this.dataGridViewMusic.Location = new System.Drawing.Point(12, 239);
             this.dataGridViewMusic.MultiSelect = false;
@@ -187,7 +149,6 @@ namespace Rental
             this.dataGridViewAudiobook.AllowUserToDeleteRows = false;
             this.dataGridViewAudiobook.AllowUserToResizeColumns = false;
             this.dataGridViewAudiobook.AllowUserToResizeRows = false;
-            this.dataGridViewAudiobook.AutoGenerateColumns = false;
             this.dataGridViewAudiobook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewAudiobook.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewAudiobook.BackgroundColor = System.Drawing.Color.White;
@@ -203,12 +164,6 @@ namespace Rental
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewAudiobook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewAudiobook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAudiobook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn2,
-            this.idaudiobookDataGridViewTextBoxColumn,
-            this.rentalfromDataGridViewTextBoxColumn2,
-            this.rentaltoDataGridViewTextBoxColumn2});
-            this.dataGridViewAudiobook.DataSource = this.rENTALAUDIOBOOKBindingSource;
             this.dataGridViewAudiobook.GridColor = System.Drawing.Color.White;
             this.dataGridViewAudiobook.Location = new System.Drawing.Point(12, 435);
             this.dataGridViewAudiobook.MultiSelect = false;
@@ -220,134 +175,6 @@ namespace Rental
             this.dataGridViewAudiobook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAudiobook.Size = new System.Drawing.Size(739, 151);
             this.dataGridViewAudiobook.TabIndex = 33;
-            // 
-            // rENTALMOVIEBindingSource
-            // 
-            this.rENTALMOVIEBindingSource.DataMember = "RENTAL_MOVIE";
-            this.rENTALMOVIEBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // rentalDataSet
-            // 
-            this.rentalDataSet.DataSetName = "RentalDataSet";
-            this.rentalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rENTAL_MOVIETableAdapter
-            // 
-            this.rENTAL_MOVIETableAdapter.ClearBeforeFill = true;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usernameDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // idmovieDataGridViewTextBoxColumn
-            // 
-            this.idmovieDataGridViewTextBoxColumn.DataPropertyName = "id_movie";
-            this.idmovieDataGridViewTextBoxColumn.HeaderText = "id_movie";
-            this.idmovieDataGridViewTextBoxColumn.Name = "idmovieDataGridViewTextBoxColumn";
-            this.idmovieDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idmovieDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // rentalfromDataGridViewTextBoxColumn
-            // 
-            this.rentalfromDataGridViewTextBoxColumn.DataPropertyName = "rental_from";
-            this.rentalfromDataGridViewTextBoxColumn.HeaderText = "rental_from";
-            this.rentalfromDataGridViewTextBoxColumn.Name = "rentalfromDataGridViewTextBoxColumn";
-            this.rentalfromDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rentalfromDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // rentaltoDataGridViewTextBoxColumn
-            // 
-            this.rentaltoDataGridViewTextBoxColumn.DataPropertyName = "rental_to";
-            this.rentaltoDataGridViewTextBoxColumn.HeaderText = "rental_to";
-            this.rentaltoDataGridViewTextBoxColumn.Name = "rentaltoDataGridViewTextBoxColumn";
-            this.rentaltoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rentaltoDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // rENTALCDDISCBindingSource
-            // 
-            this.rENTALCDDISCBindingSource.DataMember = "RENTAL_CD_DISC";
-            this.rENTALCDDISCBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // rENTAL_CD_DISCTableAdapter
-            // 
-            this.rENTAL_CD_DISCTableAdapter.ClearBeforeFill = true;
-            // 
-            // usernameDataGridViewTextBoxColumn1
-            // 
-            this.usernameDataGridViewTextBoxColumn1.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn1.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn1.Name = "usernameDataGridViewTextBoxColumn1";
-            this.usernameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.usernameDataGridViewTextBoxColumn1.Width = 104;
-            // 
-            // idcdDataGridViewTextBoxColumn
-            // 
-            this.idcdDataGridViewTextBoxColumn.DataPropertyName = "id_cd";
-            this.idcdDataGridViewTextBoxColumn.HeaderText = "id_cd";
-            this.idcdDataGridViewTextBoxColumn.Name = "idcdDataGridViewTextBoxColumn";
-            this.idcdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idcdDataGridViewTextBoxColumn.Width = 71;
-            // 
-            // rentalfromDataGridViewTextBoxColumn1
-            // 
-            this.rentalfromDataGridViewTextBoxColumn1.DataPropertyName = "rental_from";
-            this.rentalfromDataGridViewTextBoxColumn1.HeaderText = "rental_from";
-            this.rentalfromDataGridViewTextBoxColumn1.Name = "rentalfromDataGridViewTextBoxColumn1";
-            this.rentalfromDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.rentalfromDataGridViewTextBoxColumn1.Width = 115;
-            // 
-            // rentaltoDataGridViewTextBoxColumn1
-            // 
-            this.rentaltoDataGridViewTextBoxColumn1.DataPropertyName = "rental_to";
-            this.rentaltoDataGridViewTextBoxColumn1.HeaderText = "rental_to";
-            this.rentaltoDataGridViewTextBoxColumn1.Name = "rentaltoDataGridViewTextBoxColumn1";
-            this.rentaltoDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.rentaltoDataGridViewTextBoxColumn1.Width = 95;
-            // 
-            // rENTALAUDIOBOOKBindingSource
-            // 
-            this.rENTALAUDIOBOOKBindingSource.DataMember = "RENTAL_AUDIOBOOK";
-            this.rENTALAUDIOBOOKBindingSource.DataSource = this.rentalDataSet;
-            // 
-            // rENTAL_AUDIOBOOKTableAdapter
-            // 
-            this.rENTAL_AUDIOBOOKTableAdapter.ClearBeforeFill = true;
-            // 
-            // usernameDataGridViewTextBoxColumn2
-            // 
-            this.usernameDataGridViewTextBoxColumn2.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn2.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn2.Name = "usernameDataGridViewTextBoxColumn2";
-            this.usernameDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.usernameDataGridViewTextBoxColumn2.Width = 104;
-            // 
-            // idaudiobookDataGridViewTextBoxColumn
-            // 
-            this.idaudiobookDataGridViewTextBoxColumn.DataPropertyName = "id_audiobook";
-            this.idaudiobookDataGridViewTextBoxColumn.HeaderText = "id_audiobook";
-            this.idaudiobookDataGridViewTextBoxColumn.Name = "idaudiobookDataGridViewTextBoxColumn";
-            this.idaudiobookDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idaudiobookDataGridViewTextBoxColumn.Width = 129;
-            // 
-            // rentalfromDataGridViewTextBoxColumn2
-            // 
-            this.rentalfromDataGridViewTextBoxColumn2.DataPropertyName = "rental_from";
-            this.rentalfromDataGridViewTextBoxColumn2.HeaderText = "rental_from";
-            this.rentalfromDataGridViewTextBoxColumn2.Name = "rentalfromDataGridViewTextBoxColumn2";
-            this.rentalfromDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.rentalfromDataGridViewTextBoxColumn2.Width = 115;
-            // 
-            // rentaltoDataGridViewTextBoxColumn2
-            // 
-            this.rentaltoDataGridViewTextBoxColumn2.DataPropertyName = "rental_to";
-            this.rentaltoDataGridViewTextBoxColumn2.HeaderText = "rental_to";
-            this.rentaltoDataGridViewTextBoxColumn2.Name = "rentaltoDataGridViewTextBoxColumn2";
-            this.rentaltoDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.rentaltoDataGridViewTextBoxColumn2.Width = 95;
             // 
             // rentedWin
             // 
@@ -373,10 +200,6 @@ namespace Rental
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMusic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAudiobook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rENTALMOVIEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rENTALCDDISCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rENTALAUDIOBOOKBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,24 +213,6 @@ namespace Rental
         private System.Windows.Forms.DataGridView dataGridViewMusic;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewAudiobook;
-        private RentalDataSet rentalDataSet;
-        private System.Windows.Forms.BindingSource rENTALMOVIEBindingSource;
-        private RentalDataSetTableAdapters.RENTAL_MOVIETableAdapter rENTAL_MOVIETableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idmovieDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentalfromDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentaltoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentalfromDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentaltoDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource rENTALCDDISCBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idaudiobookDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentalfromDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentaltoDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.BindingSource rENTALAUDIOBOOKBindingSource;
-        private RentalDataSetTableAdapters.RENTAL_CD_DISCTableAdapter rENTAL_CD_DISCTableAdapter;
-        private RentalDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter rENTAL_AUDIOBOOKTableAdapter;
+ 
     }
 }

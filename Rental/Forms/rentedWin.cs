@@ -12,40 +12,31 @@ namespace Rental
 {
     public partial class rentedWin : Form
     {
+        string usernameText;
+
+        RentalDBDataSet.MOVIE1DataTable rentedMovie = new RentalDBDataSet.MOVIE1DataTable();
+        RentalDBDataSet.CD_DISC1DataTable rentedMusic = new RentalDBDataSet.CD_DISC1DataTable();
+        RentalDBDataSet.AUDIOBOOK1DataTable rentedAudiobook = new RentalDBDataSet.AUDIOBOOK1DataTable();
         public rentedWin(string userName)
         {
-            //RentalDataSet.MOVIEDataTable dtMovieRented = new RentalDataSet.MOVIEDataTable();
-            //RentalDataSet.CD_DISCDataTable dtCDRented = new RentalDataSet.CD_DISCDataTable();
-            //RentalDataSet.AUDIOBOOKDataTable dtAudiobookRented = new RentalDataSet.AUDIOBOOKDataTable();
-            //new RentalDataSetTableAdapters.MOVIETableAdapter().Fill(dtMovieRented);
-            //new RentalDataSetTableAdapters.CD_DISCTableAdapter().Fill(dtCDRented);
-            //new RentalDataSetTableAdapters.AUDIOBOOKTableAdapter().Fill(dtAudiobookRented);
-
-            //RentalDataSet.RENTAL_MOVIEDataTable dtMovieRented = new RentalDataSet.RENTAL_MOVIEDataTable();
-            
-                        //dtMovieRented.Fill(new RentalDataSetTableAdapters.QueriesTableAdapter().ScalarQuery(userName));
             InitializeComponent();
-            //try
-            //{
-            //    RentalDataSet.MOVIEDataTable dtMovieRented2 = new RentalDataSet.MOVIEDataTable();
-            //    new RentalDataSetTableAdapters.MOVIETableAdapter().FillByMovieRentedByUser(dtMovieRented2, userName);
-            //    dataGridViewMovie.DataSource = dtMovieRented2;
-            //}
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show(e.ToString());
-            //}
+            this.usernameText = userName;
         }
 
         private void rentedWin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'rentalDataSet.RENTAL_AUDIOBOOK' table. You can move, or remove it, as needed.
-            this.rENTAL_AUDIOBOOKTableAdapter.Fill(this.rentalDataSet.RENTAL_AUDIOBOOK);
-            // TODO: This line of code loads data into the 'rentalDataSet.RENTAL_CD_DISC' table. You can move, or remove it, as needed.
-            this.rENTAL_CD_DISCTableAdapter.Fill(this.rentalDataSet.RENTAL_CD_DISC);
-            // TODO: This line of code loads data into the 'rentalDataSet.RENTAL_MOVIE' table. You can move, or remove it, as needed.
-            this.rENTAL_MOVIETableAdapter.Fill(this.rentalDataSet.RENTAL_MOVIE);
+            new RentalDBDataSetTableAdapters.MOVIE1TableAdapter()
+                .FillMovieRentedByUser(rentedMovie, usernameText);
+            dataGridViewMovie.DataSource = rentedMovie;
 
+            new RentalDBDataSetTableAdapters.CD_DISC1TableAdapter()
+                .FillCDRentedByUser(rentedMusic, usernameText);
+            dataGridViewMusic.DataSource = rentedMusic;
+
+            new RentalDBDataSetTableAdapters.AUDIOBOOK1TableAdapter()
+                .FillAudiobookRentedByUser(rentedAudiobook, usernameText);
+            dataGridViewAudiobook.DataSource = rentedAudiobook;
+            
         }
 
         
