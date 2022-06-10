@@ -50,7 +50,7 @@ namespace Rental
             DialogResult rentDialog = MessageBox.Show("Are you sure?", "Music return", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rentDialog == DialogResult.Yes)
             {
-                var cellValue = dataGridViewCD.Rows[0].Cells[0].Value.ToString();
+                var cellValue = dataGridViewCD.Rows[dataGridViewCD.CurrentCell.RowIndex].Cells[0].Value.ToString();
 
                 new RentalDBDataSetTableAdapters.RENTAL_CD_DISCTableAdapter()
                     .UpdateRentedID_CD(false, Int32.Parse(cellValue));

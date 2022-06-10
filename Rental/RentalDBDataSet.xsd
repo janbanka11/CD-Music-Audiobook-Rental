@@ -2,9 +2,10 @@
 <xs:schema id="RentalDBDataSet" targetNamespace="http://tempuri.org/RentalDBDataSet.xsd" xmlns:mstns="http://tempuri.org/RentalDBDataSet.xsd" xmlns="http://tempuri.org/RentalDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RentalDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RentalDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Rental.Properties.Settings.GlobalReference.Default.RentalDBConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RentalConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RentalConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Rental.Properties.Settings.GlobalReference.Default.RentalConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AUDIOBOOKTableAdapter" GeneratorDataComponentClassName="AUDIOBOOKTableAdapter" Name="AUDIOBOOK" UserDataComponentName="AUDIOBOOKTableAdapter">
@@ -352,7 +353,7 @@ SELECT id_movie, title AS 'Title', price AS 'Price', genre AS 'Genre', director 
               <Mapping SourceColumn="rental_to" DataSetColumn="rental_to" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRentalAudiobook" Modifier="Public" Name="DeleteRentalAudiobook" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteRentalAudiobook">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRentalAudiobook" Modifier="Public" Name="DeleteRentalAudiobook" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteRentalAudiobook">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE from rental_audiobook WHERE id_audiobook = @cellValue</CommandText>
@@ -362,7 +363,7 @@ SELECT id_movie, title AS 'Title', price AS 'Price', genre AS 'Genre', director 
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRentalAudiobook" Modifier="Public" Name="InsertRentalAudiobook" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertRentalAudiobook">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRentalAudiobook" Modifier="Public" Name="InsertRentalAudiobook" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertRentalAudiobook">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[RENTAL_AUDIOBOOK] ([username], [id_audiobook], [rental_from], [rental_to]) VALUES (@username, @id_audiobook, @rental_from, @rental_to)</CommandText>
@@ -375,7 +376,7 @@ SELECT id_movie, title AS 'Title', price AS 'Price', genre AS 'Genre', director 
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRentedID_Audiobook" Modifier="Public" Name="UpdateRentedID_Audiobook" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateRentedID_Audiobook">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRentedID_Audiobook" Modifier="Public" Name="UpdateRentedID_Audiobook" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateRentedID_Audiobook">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE dbo.audiobook
@@ -419,7 +420,7 @@ WHERE id_audiobook = @id_cd</CommandText>
               <Mapping SourceColumn="rental_to" DataSetColumn="rental_to" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRentalCD" Modifier="Public" Name="DeleteRentalCD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteRentalCD">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRentalCD" Modifier="Public" Name="DeleteRentalCD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteRentalCD">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE from rental_cd_disc WHERE id_cd = @cellValue</CommandText>
@@ -429,7 +430,7 @@ WHERE id_audiobook = @id_cd</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRentalCD" Modifier="Public" Name="InsertRentalCD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertRentalCD">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRentalCD" Modifier="Public" Name="InsertRentalCD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertRentalCD">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[RENTAL_CD_DISC] ([username], [id_cd], [rental_from], [rental_to]) VALUES (@username, @id_cd, @rental_from, @rental_to)</CommandText>
@@ -442,7 +443,7 @@ WHERE id_audiobook = @id_cd</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRentedID_CD" Modifier="Public" Name="UpdateRentedID_CD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateRentedID_CD">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRentedID_CD" Modifier="Public" Name="UpdateRentedID_CD" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateRentedID_CD">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE dbo.CD_DISC
@@ -487,7 +488,7 @@ WHERE id_cd = @id_cd</CommandText>
               <Mapping SourceColumn="rental_to" DataSetColumn="rental_to" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="deleteRentalMovie" Modifier="Public" Name="deleteRentalMovie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="deleteRentalMovie">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="deleteRentalMovie" Modifier="Public" Name="deleteRentalMovie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="deleteRentalMovie">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE from rental_movie WHERE id_movie = @cellValue</CommandText>
@@ -497,7 +498,7 @@ WHERE id_cd = @id_cd</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRentalMovie" Modifier="Public" Name="InsertRentalMovie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertRentalMovie">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRentalMovie" Modifier="Public" Name="InsertRentalMovie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertRentalMovie">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[RENTAL_MOVIE] ([username], [id_movie], [rental_from], [rental_to]) VALUES (@username, @id_movie, @rental_from, @rental_to)</CommandText>
@@ -510,7 +511,7 @@ WHERE id_cd = @id_cd</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRentedIDMovie" Modifier="Public" Name="UpdateRentedIDMovie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateRentedIDMovie">
+              <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRentedIDMovie" Modifier="Public" Name="UpdateRentedIDMovie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateRentedIDMovie">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE dbo.MOVIE 
@@ -596,14 +597,42 @@ WHERE id_movie = @idMovie</CommandText>
             <Sources />
           </TableAdapter>
         </Tables>
-        <Sources />
+        <Sources>
+          <DbSource ConnectionRef="RentalDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SelectUserBill" MethodsParameterType="CLR" Modifier="Public" Name="SelectUserBill" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SelectUserBill">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT       SUM(price) AS Expr1
+FROM            (SELECT       m.price
+                          FROM            MOVIE AS m INNER JOIN
+                                                   RENTAL_MOVIE AS rm ON m.id_movie = rm.id_movie INNER JOIN
+                                                   CUSTOMER AS c ON rm.username = c.username
+                          WHERE        (c.username = @username)
+                          UNION ALL
+                          SELECT       a.price
+                          FROM            AUDIOBOOK AS a INNER JOIN
+                                                   RENTAL_AUDIOBOOK AS ra ON a.id_audiobook = ra.id_audiobook INNER JOIN
+                                                   CUSTOMER AS c ON ra.username = c.username
+                          WHERE        (c.username = @username)
+                          UNION ALL
+                          SELECT       cd.price
+                          FROM            CD_DISC AS cd INNER JOIN
+                                                   RENTAL_CD_DISC AS rcd ON cd.id_cd = rcd.id_cd INNER JOIN
+                                                   CUSTOMER AS c ON rcd.username = c.username
+                          WHERE        (c.username = @username)) AS t1</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="username" ColumnName="" DataSourceName="" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@username" Precision="0" Scale="0" Size="25" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
   <xs:element name="RentalDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RentalDBDataSet" msprop:Generator_UserDSName="RentalDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AUDIOBOOK" msprop:Generator_TableClassName="AUDIOBOOKDataTable" msprop:Generator_TableVarName="tableAUDIOBOOK" msprop:Generator_RowChangedName="AUDIOBOOKRowChanged" msprop:Generator_TablePropName="AUDIOBOOK" msprop:Generator_RowDeletingName="AUDIOBOOKRowDeleting" msprop:Generator_RowChangingName="AUDIOBOOKRowChanging" msprop:Generator_RowEvHandlerName="AUDIOBOOKRowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIOBOOKRowDeleted" msprop:Generator_RowClassName="AUDIOBOOKRow" msprop:Generator_UserTableName="AUDIOBOOK" msprop:Generator_RowEvArgName="AUDIOBOOKRowChangeEvent">
+        <xs:element name="AUDIOBOOK" msprop:Generator_TableClassName="AUDIOBOOKDataTable" msprop:Generator_TableVarName="tableAUDIOBOOK" msprop:Generator_TablePropName="AUDIOBOOK" msprop:Generator_RowDeletingName="AUDIOBOOKRowDeleting" msprop:Generator_RowChangingName="AUDIOBOOKRowChanging" msprop:Generator_RowEvHandlerName="AUDIOBOOKRowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIOBOOKRowDeleted" msprop:Generator_UserTableName="AUDIOBOOK" msprop:Generator_RowChangedName="AUDIOBOOKRowChanged" msprop:Generator_RowEvArgName="AUDIOBOOKRowChangeEvent" msprop:Generator_RowClassName="AUDIOBOOKRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_audiobook" msprop:Generator_ColumnVarNameInTable="columnid_audiobook" msprop:Generator_ColumnPropNameInRow="id_audiobook" msprop:Generator_ColumnPropNameInTable="id_audiobookColumn" msprop:Generator_UserColumnName="id_audiobook" type="xs:int" />
@@ -634,7 +663,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CD_DISC" msprop:Generator_TableClassName="CD_DISCDataTable" msprop:Generator_TableVarName="tableCD_DISC" msprop:Generator_RowChangedName="CD_DISCRowChanged" msprop:Generator_TablePropName="CD_DISC" msprop:Generator_RowDeletingName="CD_DISCRowDeleting" msprop:Generator_RowChangingName="CD_DISCRowChanging" msprop:Generator_RowEvHandlerName="CD_DISCRowChangeEventHandler" msprop:Generator_RowDeletedName="CD_DISCRowDeleted" msprop:Generator_RowClassName="CD_DISCRow" msprop:Generator_UserTableName="CD_DISC" msprop:Generator_RowEvArgName="CD_DISCRowChangeEvent">
+        <xs:element name="CD_DISC" msprop:Generator_TableClassName="CD_DISCDataTable" msprop:Generator_TableVarName="tableCD_DISC" msprop:Generator_TablePropName="CD_DISC" msprop:Generator_RowDeletingName="CD_DISCRowDeleting" msprop:Generator_RowChangingName="CD_DISCRowChanging" msprop:Generator_RowEvHandlerName="CD_DISCRowChangeEventHandler" msprop:Generator_RowDeletedName="CD_DISCRowDeleted" msprop:Generator_UserTableName="CD_DISC" msprop:Generator_RowChangedName="CD_DISCRowChanged" msprop:Generator_RowEvArgName="CD_DISCRowChangeEvent" msprop:Generator_RowClassName="CD_DISCRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_cd" msprop:Generator_ColumnVarNameInTable="columnid_cd" msprop:Generator_ColumnPropNameInRow="id_cd" msprop:Generator_ColumnPropNameInTable="id_cdColumn" msprop:Generator_UserColumnName="id_cd" type="xs:int" />
@@ -664,7 +693,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CUSTOMER" msprop:Generator_TableClassName="CUSTOMERDataTable" msprop:Generator_TableVarName="tableCUSTOMER" msprop:Generator_RowChangedName="CUSTOMERRowChanged" msprop:Generator_TablePropName="CUSTOMER" msprop:Generator_RowDeletingName="CUSTOMERRowDeleting" msprop:Generator_RowChangingName="CUSTOMERRowChanging" msprop:Generator_RowEvHandlerName="CUSTOMERRowChangeEventHandler" msprop:Generator_RowDeletedName="CUSTOMERRowDeleted" msprop:Generator_RowClassName="CUSTOMERRow" msprop:Generator_UserTableName="CUSTOMER" msprop:Generator_RowEvArgName="CUSTOMERRowChangeEvent">
+        <xs:element name="CUSTOMER" msprop:Generator_TableClassName="CUSTOMERDataTable" msprop:Generator_TableVarName="tableCUSTOMER" msprop:Generator_TablePropName="CUSTOMER" msprop:Generator_RowDeletingName="CUSTOMERRowDeleting" msprop:Generator_RowChangingName="CUSTOMERRowChanging" msprop:Generator_RowEvHandlerName="CUSTOMERRowChangeEventHandler" msprop:Generator_RowDeletedName="CUSTOMERRowDeleted" msprop:Generator_UserTableName="CUSTOMER" msprop:Generator_RowChangedName="CUSTOMERRowChanged" msprop:Generator_RowEvArgName="CUSTOMERRowChangeEvent" msprop:Generator_RowClassName="CUSTOMERRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username">
@@ -700,7 +729,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MOVIE" msprop:Generator_TableClassName="MOVIEDataTable" msprop:Generator_TableVarName="tableMOVIE" msprop:Generator_RowChangedName="MOVIERowChanged" msprop:Generator_TablePropName="MOVIE" msprop:Generator_RowDeletingName="MOVIERowDeleting" msprop:Generator_RowChangingName="MOVIERowChanging" msprop:Generator_RowEvHandlerName="MOVIERowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIERowDeleted" msprop:Generator_RowClassName="MOVIERow" msprop:Generator_UserTableName="MOVIE" msprop:Generator_RowEvArgName="MOVIERowChangeEvent">
+        <xs:element name="MOVIE" msprop:Generator_TableClassName="MOVIEDataTable" msprop:Generator_TableVarName="tableMOVIE" msprop:Generator_TablePropName="MOVIE" msprop:Generator_RowDeletingName="MOVIERowDeleting" msprop:Generator_RowChangingName="MOVIERowChanging" msprop:Generator_RowEvHandlerName="MOVIERowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIERowDeleted" msprop:Generator_UserTableName="MOVIE" msprop:Generator_RowChangedName="MOVIERowChanged" msprop:Generator_RowEvArgName="MOVIERowChangeEvent" msprop:Generator_RowClassName="MOVIERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_movie" msprop:Generator_ColumnVarNameInTable="columnid_movie" msprop:Generator_ColumnPropNameInRow="id_movie" msprop:Generator_ColumnPropNameInTable="id_movieColumn" msprop:Generator_UserColumnName="id_movie" type="xs:int" />
@@ -732,7 +761,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RENTAL_AUDIOBOOK" msprop:Generator_TableClassName="RENTAL_AUDIOBOOKDataTable" msprop:Generator_TableVarName="tableRENTAL_AUDIOBOOK" msprop:Generator_RowChangedName="RENTAL_AUDIOBOOKRowChanged" msprop:Generator_TablePropName="RENTAL_AUDIOBOOK" msprop:Generator_RowDeletingName="RENTAL_AUDIOBOOKRowDeleting" msprop:Generator_RowChangingName="RENTAL_AUDIOBOOKRowChanging" msprop:Generator_RowEvHandlerName="RENTAL_AUDIOBOOKRowChangeEventHandler" msprop:Generator_RowDeletedName="RENTAL_AUDIOBOOKRowDeleted" msprop:Generator_RowClassName="RENTAL_AUDIOBOOKRow" msprop:Generator_UserTableName="RENTAL_AUDIOBOOK" msprop:Generator_RowEvArgName="RENTAL_AUDIOBOOKRowChangeEvent">
+        <xs:element name="RENTAL_AUDIOBOOK" msprop:Generator_TableClassName="RENTAL_AUDIOBOOKDataTable" msprop:Generator_TableVarName="tableRENTAL_AUDIOBOOK" msprop:Generator_TablePropName="RENTAL_AUDIOBOOK" msprop:Generator_RowDeletingName="RENTAL_AUDIOBOOKRowDeleting" msprop:Generator_RowChangingName="RENTAL_AUDIOBOOKRowChanging" msprop:Generator_RowEvHandlerName="RENTAL_AUDIOBOOKRowChangeEventHandler" msprop:Generator_RowDeletedName="RENTAL_AUDIOBOOKRowDeleted" msprop:Generator_UserTableName="RENTAL_AUDIOBOOK" msprop:Generator_RowChangedName="RENTAL_AUDIOBOOKRowChanged" msprop:Generator_RowEvArgName="RENTAL_AUDIOBOOKRowChangeEvent" msprop:Generator_RowClassName="RENTAL_AUDIOBOOKRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
@@ -748,7 +777,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RENTAL_CD_DISC" msprop:Generator_TableClassName="RENTAL_CD_DISCDataTable" msprop:Generator_TableVarName="tableRENTAL_CD_DISC" msprop:Generator_RowChangedName="RENTAL_CD_DISCRowChanged" msprop:Generator_TablePropName="RENTAL_CD_DISC" msprop:Generator_RowDeletingName="RENTAL_CD_DISCRowDeleting" msprop:Generator_RowChangingName="RENTAL_CD_DISCRowChanging" msprop:Generator_RowEvHandlerName="RENTAL_CD_DISCRowChangeEventHandler" msprop:Generator_RowDeletedName="RENTAL_CD_DISCRowDeleted" msprop:Generator_RowClassName="RENTAL_CD_DISCRow" msprop:Generator_UserTableName="RENTAL_CD_DISC" msprop:Generator_RowEvArgName="RENTAL_CD_DISCRowChangeEvent">
+        <xs:element name="RENTAL_CD_DISC" msprop:Generator_TableClassName="RENTAL_CD_DISCDataTable" msprop:Generator_TableVarName="tableRENTAL_CD_DISC" msprop:Generator_TablePropName="RENTAL_CD_DISC" msprop:Generator_RowDeletingName="RENTAL_CD_DISCRowDeleting" msprop:Generator_RowChangingName="RENTAL_CD_DISCRowChanging" msprop:Generator_RowEvHandlerName="RENTAL_CD_DISCRowChangeEventHandler" msprop:Generator_RowDeletedName="RENTAL_CD_DISCRowDeleted" msprop:Generator_UserTableName="RENTAL_CD_DISC" msprop:Generator_RowChangedName="RENTAL_CD_DISCRowChanged" msprop:Generator_RowEvArgName="RENTAL_CD_DISCRowChangeEvent" msprop:Generator_RowClassName="RENTAL_CD_DISCRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
@@ -764,7 +793,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RENTAL_MOVIE" msprop:Generator_TableClassName="RENTAL_MOVIEDataTable" msprop:Generator_TableVarName="tableRENTAL_MOVIE" msprop:Generator_RowChangedName="RENTAL_MOVIERowChanged" msprop:Generator_TablePropName="RENTAL_MOVIE" msprop:Generator_RowDeletingName="RENTAL_MOVIERowDeleting" msprop:Generator_RowChangingName="RENTAL_MOVIERowChanging" msprop:Generator_RowEvHandlerName="RENTAL_MOVIERowChangeEventHandler" msprop:Generator_RowDeletedName="RENTAL_MOVIERowDeleted" msprop:Generator_RowClassName="RENTAL_MOVIERow" msprop:Generator_UserTableName="RENTAL_MOVIE" msprop:Generator_RowEvArgName="RENTAL_MOVIERowChangeEvent">
+        <xs:element name="RENTAL_MOVIE" msprop:Generator_TableClassName="RENTAL_MOVIEDataTable" msprop:Generator_TableVarName="tableRENTAL_MOVIE" msprop:Generator_TablePropName="RENTAL_MOVIE" msprop:Generator_RowDeletingName="RENTAL_MOVIERowDeleting" msprop:Generator_RowChangingName="RENTAL_MOVIERowChanging" msprop:Generator_RowEvHandlerName="RENTAL_MOVIERowChangeEventHandler" msprop:Generator_RowDeletedName="RENTAL_MOVIERowDeleted" msprop:Generator_UserTableName="RENTAL_MOVIE" msprop:Generator_RowChangedName="RENTAL_MOVIERowChanged" msprop:Generator_RowEvArgName="RENTAL_MOVIERowChangeEvent" msprop:Generator_RowClassName="RENTAL_MOVIERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
@@ -780,7 +809,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MOVIE1" msprop:Generator_TableClassName="MOVIE1DataTable" msprop:Generator_TableVarName="tableMOVIE1" msprop:Generator_RowChangedName="MOVIE1RowChanged" msprop:Generator_TablePropName="MOVIE1" msprop:Generator_RowDeletingName="MOVIE1RowDeleting" msprop:Generator_RowChangingName="MOVIE1RowChanging" msprop:Generator_RowEvHandlerName="MOVIE1RowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIE1RowDeleted" msprop:Generator_RowClassName="MOVIE1Row" msprop:Generator_UserTableName="MOVIE1" msprop:Generator_RowEvArgName="MOVIE1RowChangeEvent">
+        <xs:element name="MOVIE1" msprop:Generator_TableClassName="MOVIE1DataTable" msprop:Generator_TableVarName="tableMOVIE1" msprop:Generator_TablePropName="MOVIE1" msprop:Generator_RowDeletingName="MOVIE1RowDeleting" msprop:Generator_RowChangingName="MOVIE1RowChanging" msprop:Generator_RowEvHandlerName="MOVIE1RowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIE1RowDeleted" msprop:Generator_UserTableName="MOVIE1" msprop:Generator_RowChangedName="MOVIE1RowChanged" msprop:Generator_RowEvArgName="MOVIE1RowChangeEvent" msprop:Generator_RowClassName="MOVIE1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_movie" msprop:Generator_ColumnVarNameInTable="columnid_movie" msprop:Generator_ColumnPropNameInRow="id_movie" msprop:Generator_ColumnPropNameInTable="id_movieColumn" msprop:Generator_UserColumnName="id_movie" type="xs:int" />
@@ -810,7 +839,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CD_DISC1" msprop:Generator_TableClassName="CD_DISC1DataTable" msprop:Generator_TableVarName="tableCD_DISC1" msprop:Generator_RowChangedName="CD_DISC1RowChanged" msprop:Generator_TablePropName="CD_DISC1" msprop:Generator_RowDeletingName="CD_DISC1RowDeleting" msprop:Generator_RowChangingName="CD_DISC1RowChanging" msprop:Generator_RowEvHandlerName="CD_DISC1RowChangeEventHandler" msprop:Generator_RowDeletedName="CD_DISC1RowDeleted" msprop:Generator_RowClassName="CD_DISC1Row" msprop:Generator_UserTableName="CD_DISC1" msprop:Generator_RowEvArgName="CD_DISC1RowChangeEvent">
+        <xs:element name="CD_DISC1" msprop:Generator_TableClassName="CD_DISC1DataTable" msprop:Generator_TableVarName="tableCD_DISC1" msprop:Generator_TablePropName="CD_DISC1" msprop:Generator_RowDeletingName="CD_DISC1RowDeleting" msprop:Generator_RowChangingName="CD_DISC1RowChanging" msprop:Generator_RowEvHandlerName="CD_DISC1RowChangeEventHandler" msprop:Generator_RowDeletedName="CD_DISC1RowDeleted" msprop:Generator_UserTableName="CD_DISC1" msprop:Generator_RowChangedName="CD_DISC1RowChanged" msprop:Generator_RowEvArgName="CD_DISC1RowChangeEvent" msprop:Generator_RowClassName="CD_DISC1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_cd" msprop:Generator_ColumnVarNameInTable="columnid_cd" msprop:Generator_ColumnPropNameInRow="id_cd" msprop:Generator_ColumnPropNameInTable="id_cdColumn" msprop:Generator_UserColumnName="id_cd" type="xs:int" />
@@ -840,7 +869,7 @@ WHERE id_movie = @idMovie</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AUDIOBOOK1" msprop:Generator_TableClassName="AUDIOBOOK1DataTable" msprop:Generator_TableVarName="tableAUDIOBOOK1" msprop:Generator_RowChangedName="AUDIOBOOK1RowChanged" msprop:Generator_TablePropName="AUDIOBOOK1" msprop:Generator_RowDeletingName="AUDIOBOOK1RowDeleting" msprop:Generator_RowChangingName="AUDIOBOOK1RowChanging" msprop:Generator_RowEvHandlerName="AUDIOBOOK1RowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIOBOOK1RowDeleted" msprop:Generator_RowClassName="AUDIOBOOK1Row" msprop:Generator_UserTableName="AUDIOBOOK1" msprop:Generator_RowEvArgName="AUDIOBOOK1RowChangeEvent">
+        <xs:element name="AUDIOBOOK1" msprop:Generator_TableClassName="AUDIOBOOK1DataTable" msprop:Generator_TableVarName="tableAUDIOBOOK1" msprop:Generator_TablePropName="AUDIOBOOK1" msprop:Generator_RowDeletingName="AUDIOBOOK1RowDeleting" msprop:Generator_RowChangingName="AUDIOBOOK1RowChanging" msprop:Generator_RowEvHandlerName="AUDIOBOOK1RowChangeEventHandler" msprop:Generator_RowDeletedName="AUDIOBOOK1RowDeleted" msprop:Generator_UserTableName="AUDIOBOOK1" msprop:Generator_RowChangedName="AUDIOBOOK1RowChanged" msprop:Generator_RowEvArgName="AUDIOBOOK1RowChangeEvent" msprop:Generator_RowClassName="AUDIOBOOK1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_audiobook" msprop:Generator_ColumnVarNameInTable="columnid_audiobook" msprop:Generator_ColumnPropNameInRow="id_audiobook" msprop:Generator_ColumnPropNameInTable="id_audiobookColumn" msprop:Generator_UserColumnName="id_audiobook" type="xs:int" />
@@ -903,15 +932,15 @@ WHERE id_movie = @idMovie</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_RENTAL_A_RELATIONS_AUDIOBOO" msdata:parent="AUDIOBOOK" msdata:child="RENTAL_AUDIOBOOK" msdata:parentkey="id_audiobook" msdata:childkey="id_audiobook" msprop:Generator_UserChildTable="RENTAL_AUDIOBOOK" msprop:Generator_ChildPropName="GetRENTAL_AUDIOBOOKRows" msprop:Generator_UserRelationName="FK_RENTAL_A_RELATIONS_AUDIOBOO" msprop:Generator_RelationVarName="relationFK_RENTAL_A_RELATIONS_AUDIOBOO" msprop:Generator_UserParentTable="AUDIOBOOK" msprop:Generator_ParentPropName="AUDIOBOOKRow" />
-      <msdata:Relationship name="FK_RENTAL_A_RELATIONS_CUSTOMER" msdata:parent="CUSTOMER" msdata:child="RENTAL_AUDIOBOOK" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserChildTable="RENTAL_AUDIOBOOK" msprop:Generator_ChildPropName="GetRENTAL_AUDIOBOOKRows" msprop:Generator_UserRelationName="FK_RENTAL_A_RELATIONS_CUSTOMER" msprop:Generator_RelationVarName="relationFK_RENTAL_A_RELATIONS_CUSTOMER" msprop:Generator_UserParentTable="CUSTOMER" msprop:Generator_ParentPropName="CUSTOMERRow" />
-      <msdata:Relationship name="FK_RENTAL_C_RELATIONS_CD_DISC" msdata:parent="CD_DISC" msdata:child="RENTAL_CD_DISC" msdata:parentkey="id_cd" msdata:childkey="id_cd" msprop:Generator_UserChildTable="RENTAL_CD_DISC" msprop:Generator_ChildPropName="GetRENTAL_CD_DISCRows" msprop:Generator_UserRelationName="FK_RENTAL_C_RELATIONS_CD_DISC" msprop:Generator_RelationVarName="relationFK_RENTAL_C_RELATIONS_CD_DISC" msprop:Generator_UserParentTable="CD_DISC" msprop:Generator_ParentPropName="CD_DISCRow" />
-      <msdata:Relationship name="FK_RENTAL_C_RELATIONS_CUSTOMER" msdata:parent="CUSTOMER" msdata:child="RENTAL_CD_DISC" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserChildTable="RENTAL_CD_DISC" msprop:Generator_ChildPropName="GetRENTAL_CD_DISCRows" msprop:Generator_UserRelationName="FK_RENTAL_C_RELATIONS_CUSTOMER" msprop:Generator_RelationVarName="relationFK_RENTAL_C_RELATIONS_CUSTOMER" msprop:Generator_UserParentTable="CUSTOMER" msprop:Generator_ParentPropName="CUSTOMERRow" />
-      <msdata:Relationship name="FK_RENTAL_M_RELATIONS_CUSTOMER" msdata:parent="CUSTOMER" msdata:child="RENTAL_MOVIE" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserChildTable="RENTAL_MOVIE" msprop:Generator_ChildPropName="GetRENTAL_MOVIERows" msprop:Generator_UserRelationName="FK_RENTAL_M_RELATIONS_CUSTOMER" msprop:Generator_RelationVarName="relationFK_RENTAL_M_RELATIONS_CUSTOMER" msprop:Generator_UserParentTable="CUSTOMER" msprop:Generator_ParentPropName="CUSTOMERRow" />
-      <msdata:Relationship name="FK_RENTAL_M_RELATIONS_MOVIE" msdata:parent="MOVIE" msdata:child="RENTAL_MOVIE" msdata:parentkey="id_movie" msdata:childkey="id_movie" msprop:Generator_UserChildTable="RENTAL_MOVIE" msprop:Generator_ChildPropName="GetRENTAL_MOVIERows" msprop:Generator_UserRelationName="FK_RENTAL_M_RELATIONS_MOVIE" msprop:Generator_RelationVarName="relationFK_RENTAL_M_RELATIONS_MOVIE" msprop:Generator_UserParentTable="MOVIE" msprop:Generator_ParentPropName="MOVIERow" />
-      <msdata:Relationship name="FK_RENTAL_M_RELATIONS_MOVIE1" msdata:parent="MOVIE1" msdata:child="RENTAL_MOVIE" msdata:parentkey="id_movie" msdata:childkey="id_movie" msprop:Generator_UserChildTable="RENTAL_MOVIE" msprop:Generator_ChildPropName="GetRENTAL_MOVIERows" msprop:Generator_UserRelationName="FK_RENTAL_M_RELATIONS_MOVIE1" msprop:Generator_ParentPropName="MOVIE1Row" msprop:Generator_RelationVarName="relationFK_RENTAL_M_RELATIONS_MOVIE1" msprop:Generator_UserParentTable="MOVIE1" />
-      <msdata:Relationship name="FK_RENTAL_C_RELATIONS_CD_DISC1" msdata:parent="CD_DISC1" msdata:child="RENTAL_CD_DISC" msdata:parentkey="id_cd" msdata:childkey="id_cd" msprop:Generator_UserChildTable="RENTAL_CD_DISC" msprop:Generator_ChildPropName="GetRENTAL_CD_DISCRows" msprop:Generator_UserRelationName="FK_RENTAL_C_RELATIONS_CD_DISC1" msprop:Generator_ParentPropName="CD_DISC1Row" msprop:Generator_RelationVarName="relationFK_RENTAL_C_RELATIONS_CD_DISC1" msprop:Generator_UserParentTable="CD_DISC1" />
-      <msdata:Relationship name="FK_RENTAL_A_RELATIONS_AUDIOBOO1" msdata:parent="AUDIOBOOK1" msdata:child="RENTAL_AUDIOBOOK" msdata:parentkey="id_audiobook" msdata:childkey="id_audiobook" msprop:Generator_UserChildTable="RENTAL_AUDIOBOOK" msprop:Generator_ChildPropName="GetRENTAL_AUDIOBOOKRows" msprop:Generator_UserRelationName="FK_RENTAL_A_RELATIONS_AUDIOBOO1" msprop:Generator_ParentPropName="AUDIOBOOK1Row" msprop:Generator_RelationVarName="relationFK_RENTAL_A_RELATIONS_AUDIOBOO1" msprop:Generator_UserParentTable="AUDIOBOOK1" />
+      <msdata:Relationship name="FK_RENTAL_A_RELATIONS_AUDIOBOO" msdata:parent="AUDIOBOOK" msdata:child="RENTAL_AUDIOBOOK" msdata:parentkey="id_audiobook" msdata:childkey="id_audiobook" msprop:Generator_UserChildTable="RENTAL_AUDIOBOOK" msprop:Generator_ChildPropName="GetRENTAL_AUDIOBOOKRows" msprop:Generator_UserRelationName="FK_RENTAL_A_RELATIONS_AUDIOBOO" msprop:Generator_ParentPropName="AUDIOBOOKRow" msprop:Generator_RelationVarName="relationFK_RENTAL_A_RELATIONS_AUDIOBOO" msprop:Generator_UserParentTable="AUDIOBOOK" />
+      <msdata:Relationship name="FK_RENTAL_A_RELATIONS_CUSTOMER" msdata:parent="CUSTOMER" msdata:child="RENTAL_AUDIOBOOK" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserChildTable="RENTAL_AUDIOBOOK" msprop:Generator_ChildPropName="GetRENTAL_AUDIOBOOKRows" msprop:Generator_UserRelationName="FK_RENTAL_A_RELATIONS_CUSTOMER" msprop:Generator_ParentPropName="CUSTOMERRow" msprop:Generator_RelationVarName="relationFK_RENTAL_A_RELATIONS_CUSTOMER" msprop:Generator_UserParentTable="CUSTOMER" />
+      <msdata:Relationship name="FK_RENTAL_C_RELATIONS_CD_DISC" msdata:parent="CD_DISC" msdata:child="RENTAL_CD_DISC" msdata:parentkey="id_cd" msdata:childkey="id_cd" msprop:Generator_UserChildTable="RENTAL_CD_DISC" msprop:Generator_ChildPropName="GetRENTAL_CD_DISCRows" msprop:Generator_UserRelationName="FK_RENTAL_C_RELATIONS_CD_DISC" msprop:Generator_ParentPropName="CD_DISCRow" msprop:Generator_RelationVarName="relationFK_RENTAL_C_RELATIONS_CD_DISC" msprop:Generator_UserParentTable="CD_DISC" />
+      <msdata:Relationship name="FK_RENTAL_C_RELATIONS_CUSTOMER" msdata:parent="CUSTOMER" msdata:child="RENTAL_CD_DISC" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserChildTable="RENTAL_CD_DISC" msprop:Generator_ChildPropName="GetRENTAL_CD_DISCRows" msprop:Generator_UserRelationName="FK_RENTAL_C_RELATIONS_CUSTOMER" msprop:Generator_ParentPropName="CUSTOMERRow" msprop:Generator_RelationVarName="relationFK_RENTAL_C_RELATIONS_CUSTOMER" msprop:Generator_UserParentTable="CUSTOMER" />
+      <msdata:Relationship name="FK_RENTAL_M_RELATIONS_CUSTOMER" msdata:parent="CUSTOMER" msdata:child="RENTAL_MOVIE" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserChildTable="RENTAL_MOVIE" msprop:Generator_ChildPropName="GetRENTAL_MOVIERows" msprop:Generator_UserRelationName="FK_RENTAL_M_RELATIONS_CUSTOMER" msprop:Generator_ParentPropName="CUSTOMERRow" msprop:Generator_RelationVarName="relationFK_RENTAL_M_RELATIONS_CUSTOMER" msprop:Generator_UserParentTable="CUSTOMER" />
+      <msdata:Relationship name="FK_RENTAL_M_RELATIONS_MOVIE" msdata:parent="MOVIE" msdata:child="RENTAL_MOVIE" msdata:parentkey="id_movie" msdata:childkey="id_movie" msprop:Generator_UserChildTable="RENTAL_MOVIE" msprop:Generator_ChildPropName="GetRENTAL_MOVIERows" msprop:Generator_UserRelationName="FK_RENTAL_M_RELATIONS_MOVIE" msprop:Generator_ParentPropName="MOVIERow" msprop:Generator_RelationVarName="relationFK_RENTAL_M_RELATIONS_MOVIE" msprop:Generator_UserParentTable="MOVIE" />
+      <msdata:Relationship name="FK_RENTAL_M_RELATIONS_MOVIE1" msdata:parent="MOVIE1" msdata:child="RENTAL_MOVIE" msdata:parentkey="id_movie" msdata:childkey="id_movie" msprop:Generator_UserChildTable="RENTAL_MOVIE" msprop:Generator_ChildPropName="GetRENTAL_MOVIERows" msprop:Generator_UserRelationName="FK_RENTAL_M_RELATIONS_MOVIE1" msprop:Generator_RelationVarName="relationFK_RENTAL_M_RELATIONS_MOVIE1" msprop:Generator_UserParentTable="MOVIE1" msprop:Generator_ParentPropName="MOVIE1Row" />
+      <msdata:Relationship name="FK_RENTAL_C_RELATIONS_CD_DISC1" msdata:parent="CD_DISC1" msdata:child="RENTAL_CD_DISC" msdata:parentkey="id_cd" msdata:childkey="id_cd" msprop:Generator_UserChildTable="RENTAL_CD_DISC" msprop:Generator_ChildPropName="GetRENTAL_CD_DISCRows" msprop:Generator_UserRelationName="FK_RENTAL_C_RELATIONS_CD_DISC1" msprop:Generator_RelationVarName="relationFK_RENTAL_C_RELATIONS_CD_DISC1" msprop:Generator_UserParentTable="CD_DISC1" msprop:Generator_ParentPropName="CD_DISC1Row" />
+      <msdata:Relationship name="FK_RENTAL_A_RELATIONS_AUDIOBOO1" msdata:parent="AUDIOBOOK1" msdata:child="RENTAL_AUDIOBOOK" msdata:parentkey="id_audiobook" msdata:childkey="id_audiobook" msprop:Generator_UserChildTable="RENTAL_AUDIOBOOK" msprop:Generator_ChildPropName="GetRENTAL_AUDIOBOOKRows" msprop:Generator_UserRelationName="FK_RENTAL_A_RELATIONS_AUDIOBOO1" msprop:Generator_RelationVarName="relationFK_RENTAL_A_RELATIONS_AUDIOBOO1" msprop:Generator_UserParentTable="AUDIOBOOK1" msprop:Generator_ParentPropName="AUDIOBOOK1Row" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -51,7 +51,7 @@ namespace Rental
             DialogResult rentDialog = MessageBox.Show("Are you sure?", "Movie return", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rentDialog == DialogResult.Yes)
             {
-                var cellValue = dataGridViewMovie.Rows[0].Cells[0].Value.ToString();
+                var cellValue = dataGridViewMovie.Rows[dataGridViewMovie.CurrentCell.RowIndex].Cells[0].Value.ToString();
 
                 new RentalDBDataSetTableAdapters.RENTAL_MOVIETableAdapter()
                         .UpdateRentedIDMovie(false, Int32.Parse(cellValue));

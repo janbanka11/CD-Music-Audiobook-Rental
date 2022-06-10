@@ -64,6 +64,8 @@ namespace Rental
                 dataGridView1.DataSource = dtMovie;
                 columnStyle();
                 dataGridView1.Columns["subtitles"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                rentNow.Visible = true;
+                backgroundImg.Visible = false;
             }
         }
 
@@ -73,6 +75,8 @@ namespace Rental
             {          
                 dataGridView1.DataSource = dtCD;
                 columnStyle();
+                rentNow.Visible = true;
+                backgroundImg.Visible = false;
             }
         }
 
@@ -82,17 +86,17 @@ namespace Rental
             {
                 dataGridView1.DataSource = dtAudiobook;
                 columnStyle();
+                rentNow.Visible = true;
+                backgroundImg.Visible = false;
             }
         }
 
         private void rentNow_Click(object sender, EventArgs e)
         {
             //getting id of movie / cd / audiobook for a tabledata adapter to work
-            var cellValue = dataGridView1.Rows[0].Cells[0].Value.ToString();
-
+            var cellValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
             if (dataGridView1.DataSource == dtMovie)
             {
-                
                 //insertRentalMovie is custom query to insert a row of relation data between user and movie tables to a table rental_movie
                 new RentalDBDataSetTableAdapters.RENTAL_MOVIETableAdapter()
                     .InsertRentalMovie(userNameText, Int32.Parse(cellValue), DateTime.Now, DateTime.Now);
@@ -133,6 +137,26 @@ namespace Rental
         {
             var rentedWin = new rentedWin(userNameText);
             rentedWin.Show();
+        }
+
+        private void selectBill_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(userNameText);
+            var a = new RentalDBDataSetTableAdapters.QueriesTableAdapter().SelectUserBill(userNameText);
+            string result = a.ToString();
+            if (Int32.Parse(result) == 0)
+            {
+                MessageBox.Show("Nothing to pay for", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Your total bill is " + result, "Total", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void userSettings_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

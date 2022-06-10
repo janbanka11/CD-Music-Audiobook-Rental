@@ -51,7 +51,7 @@ namespace Rental
             DialogResult rentDialog = MessageBox.Show("Are you sure?", "Movie return", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rentDialog == DialogResult.Yes)
             {
-                var cellValue = dataGridViewAudiobook.Rows[0].Cells[0].Value.ToString();
+                var cellValue = dataGridViewAudiobook.Rows[dataGridViewAudiobook.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 new RentalDBDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter()
                     .UpdateRentedID_Audiobook(false, Int32.Parse(cellValue));
                 new RentalDBDataSetTableAdapters.RENTAL_AUDIOBOOKTableAdapter()

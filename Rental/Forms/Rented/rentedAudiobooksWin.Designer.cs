@@ -44,9 +44,10 @@ namespace Rental
             this.noAudiobookRentedLabel.Font = new System.Drawing.Font("Roboto", 20F);
             this.noAudiobookRentedLabel.Location = new System.Drawing.Point(73, 177);
             this.noAudiobookRentedLabel.Name = "noAudiobookRentedLabel";
-            this.noAudiobookRentedLabel.Size = new System.Drawing.Size(512, 66);
+            this.noAudiobookRentedLabel.Size = new System.Drawing.Size(526, 66);
             this.noAudiobookRentedLabel.TabIndex = 35;
-            this.noAudiobookRentedLabel.Text = "You don\'t have any audiobook rented yet. \r\nCome back after you rent something!\r\n";
+            this.noAudiobookRentedLabel.Text = "You don\'t have any audiobooks rented yet. \r\nCome back after you rent something!\r\n" +
+    "";
             this.noAudiobookRentedLabel.Visible = false;
             // 
             // dataGridViewAudiobook
