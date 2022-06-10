@@ -103,6 +103,36 @@ namespace Rental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_audio_book_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-audio-book-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_headphones_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-headphones-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_movie_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-movie-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-settings-50", resourceCulture);

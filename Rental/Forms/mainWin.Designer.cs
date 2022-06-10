@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainWin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -50,6 +51,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.rentNow = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.hiLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -63,6 +65,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.hiLabel);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.userSettings);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -82,13 +85,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 560);
+            this.panel1.Size = new System.Drawing.Size(188, 527);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Rental.Properties.Resources.icons8_thick_vertical_line_50;
-            this.pictureBox2.Location = new System.Drawing.Point(18, 454);
+            this.pictureBox2.Location = new System.Drawing.Point(18, 407);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 51);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +106,7 @@
             this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userSettings.Font = new System.Drawing.Font("Roboto", 15F);
             this.userSettings.ForeColor = System.Drawing.Color.White;
-            this.userSettings.Location = new System.Drawing.Point(35, 464);
+            this.userSettings.Location = new System.Drawing.Point(35, 417);
             this.userSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.userSettings.Name = "userSettings";
             this.userSettings.Size = new System.Drawing.Size(109, 31);
@@ -115,7 +118,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Rental.Properties.Resources.icons8_thick_vertical_line_50;
-            this.pictureBox3.Location = new System.Drawing.Point(18, 417);
+            this.pictureBox3.Location = new System.Drawing.Point(18, 370);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(19, 51);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,7 +128,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Rental.Properties.Resources.icons8_thick_vertical_line_50;
-            this.pictureBox6.Location = new System.Drawing.Point(18, 380);
+            this.pictureBox6.Location = new System.Drawing.Point(18, 333);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(19, 51);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,7 +143,7 @@
             this.selectRented.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectRented.Font = new System.Drawing.Font("Roboto", 15F);
             this.selectRented.ForeColor = System.Drawing.Color.White;
-            this.selectRented.Location = new System.Drawing.Point(35, 390);
+            this.selectRented.Location = new System.Drawing.Point(35, 343);
             this.selectRented.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectRented.Name = "selectRented";
             this.selectRented.Size = new System.Drawing.Size(109, 31);
@@ -158,7 +161,7 @@
             this.selectBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectBill.Font = new System.Drawing.Font("Roboto", 15F);
             this.selectBill.ForeColor = System.Drawing.Color.White;
-            this.selectBill.Location = new System.Drawing.Point(35, 427);
+            this.selectBill.Location = new System.Drawing.Point(35, 380);
             this.selectBill.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectBill.Name = "selectBill";
             this.selectBill.Size = new System.Drawing.Size(109, 31);
@@ -172,7 +175,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 20F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 352);
+            this.label2.Location = new System.Drawing.Point(12, 305);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 33);
             this.label2.TabIndex = 39;
@@ -186,7 +189,7 @@
             this.selectAudiobook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectAudiobook.Font = new System.Drawing.Font("Roboto", 15F);
             this.selectAudiobook.ForeColor = System.Drawing.Color.White;
-            this.selectAudiobook.Location = new System.Drawing.Point(35, 270);
+            this.selectAudiobook.Location = new System.Drawing.Point(35, 223);
             this.selectAudiobook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectAudiobook.Name = "selectAudiobook";
             this.selectAudiobook.Size = new System.Drawing.Size(125, 31);
@@ -199,7 +202,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Rental.Properties.Resources.icons8_thick_vertical_line_50;
-            this.pictureBox5.Location = new System.Drawing.Point(18, 260);
+            this.pictureBox5.Location = new System.Drawing.Point(18, 213);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(19, 51);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -209,7 +212,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Rental.Properties.Resources.icons8_thick_vertical_line_50;
-            this.pictureBox4.Location = new System.Drawing.Point(18, 223);
+            this.pictureBox4.Location = new System.Drawing.Point(18, 176);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(19, 51);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -219,7 +222,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rental.Properties.Resources.icons8_thick_vertical_line_50;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 186);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 139);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,7 +234,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 20F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 160);
+            this.label1.Location = new System.Drawing.Point(12, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 33);
             this.label1.TabIndex = 2;
@@ -245,7 +248,7 @@
             this.selectMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectMovie.Font = new System.Drawing.Font("Roboto", 15F);
             this.selectMovie.ForeColor = System.Drawing.Color.White;
-            this.selectMovie.Location = new System.Drawing.Point(35, 196);
+            this.selectMovie.Location = new System.Drawing.Point(35, 149);
             this.selectMovie.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectMovie.Name = "selectMovie";
             this.selectMovie.Size = new System.Drawing.Size(109, 31);
@@ -263,7 +266,7 @@
             this.selectMusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectMusic.Font = new System.Drawing.Font("Roboto", 15F);
             this.selectMusic.ForeColor = System.Drawing.Color.White;
-            this.selectMusic.Location = new System.Drawing.Point(35, 233);
+            this.selectMusic.Location = new System.Drawing.Point(35, 186);
             this.selectMusic.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectMusic.Name = "selectMusic";
             this.selectMusic.Size = new System.Drawing.Size(109, 31);
@@ -283,7 +286,7 @@
             this.selectSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.selectSettings.Font = new System.Drawing.Font("Roboto", 17F);
             this.selectSettings.ForeColor = System.Drawing.Color.White;
-            this.selectSettings.Location = new System.Drawing.Point(4, 519);
+            this.selectSettings.Location = new System.Drawing.Point(4, 472);
             this.selectSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectSettings.Name = "selectSettings";
             this.selectSettings.Size = new System.Drawing.Size(33, 29);
@@ -317,7 +320,7 @@
             this.rentNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rentNow.Font = new System.Drawing.Font("Roboto", 18F);
             this.rentNow.ForeColor = System.Drawing.Color.White;
-            this.rentNow.Location = new System.Drawing.Point(567, 510);
+            this.rentNow.Location = new System.Drawing.Point(532, 463);
             this.rentNow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rentNow.Name = "rentNow";
             this.rentNow.Size = new System.Drawing.Size(154, 38);
@@ -332,7 +335,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -347,24 +350,44 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(194, 124);
+            this.dataGridView1.Location = new System.Drawing.Point(194, 118);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 100;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(879, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(891, 330);
             this.dataGridView1.TabIndex = 28;
+            // 
+            // hiLabel
+            // 
+            this.hiLabel.AutoSize = true;
+            this.hiLabel.Font = new System.Drawing.Font("Roboto", 20F);
+            this.hiLabel.ForeColor = System.Drawing.Color.White;
+            this.hiLabel.Location = new System.Drawing.Point(13, 36);
+            this.hiLabel.Name = "hiLabel";
+            this.hiLabel.Size = new System.Drawing.Size(41, 33);
+            this.hiLabel.TabIndex = 47;
+            this.hiLabel.Text = "Hi";
             // 
             // mainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1085, 560);
+            this.ClientSize = new System.Drawing.Size(1085, 527);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rentNow);
             this.Controls.Add(this.panel2);
@@ -412,5 +435,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button userSettings;
+        private System.Windows.Forms.Label hiLabel;
     }
 }

@@ -79,10 +79,28 @@
     <Compile Include="Forms\registrationWin.Designer.cs">
       <DependentUpon>registrationWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\rentedWin.cs">
+    <Compile Include="Forms\Rented\rentedAudiobooksWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\rentedWin.Designer.cs">
+    <Compile Include="Forms\Rented\rentedAudiobooksWin.Designer.cs">
+      <DependentUpon>rentedAudiobooksWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Rented\rentedCDWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rented\rentedCDWin.Designer.cs">
+      <DependentUpon>rentedCDWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Rented\rentedMoviesWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rented\rentedMoviesWin.Designer.cs">
+      <DependentUpon>rentedMoviesWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Rented\rentedWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rented\rentedWin.Designer.cs">
       <DependentUpon>rentedWin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -104,7 +122,16 @@
     <EmbeddedResource Include="Forms\registrationWin.resx">
       <DependentUpon>registrationWin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\rentedWin.resx">
+    <EmbeddedResource Include="Forms\Rented\rentedAudiobooksWin.resx">
+      <DependentUpon>rentedAudiobooksWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rented\rentedCDWin.resx">
+      <DependentUpon>rentedCDWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rented\rentedMoviesWin.resx">
+      <DependentUpon>rentedMoviesWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rented\rentedWin.resx">
       <DependentUpon>rentedWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -215,6 +242,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RentalDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-audio-book-100.png" />
+    <None Include="Resources\icons8-headphones-96.png" />
+    <None Include="Resources\icons8-movie-80.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

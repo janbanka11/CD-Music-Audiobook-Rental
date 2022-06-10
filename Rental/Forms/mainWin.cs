@@ -22,10 +22,10 @@ namespace Rental
         public mainWin(string userName)
         {
             InitializeComponent();
-            //hello textbox functionality
+            //user welcome textbox 
             if (userName.Length < 10)
             {
-                helloLabel.Text = "Hi " + userName;
+                hiLabel.Text = hiLabel.Text + " " + userName;
             }
             //more settings for admin user only (WIP, won't be like that)
             if (userName != "admin")
@@ -35,38 +35,44 @@ namespace Rental
             }
 
             userNameText = userName;
+
             // filling local datatables with content from database
-            
             new RentalDBDataSetTableAdapters.MOVIETableAdapter().Fill(dtMovie);
             new RentalDBDataSetTableAdapters.CD_DISCTableAdapter().Fill(dtCD);
             new RentalDBDataSetTableAdapters.AUDIOBOOKTableAdapter().Fill(dtAudiobook);
-            dataGridView1.DataSource = dtMovie;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 14.5F, FontStyle.Regular);
         }
 
         private void mainWin_Load(object sender, EventArgs e)
-        { 
-            Console.WriteLine("currentCellROW = " + dataGridView1.CurrentCell.RowIndex);
+        {
+            
+        }
+        private void columnStyle()
+        {
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns["is_rented"].Visible = false;
+            dataGridView1.Columns["price"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns["genre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns["title"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
         }
-
         private void selectMovie_Click(object sender, EventArgs e)
         {
             //changing datagridview data source if a button is clicked
             if (dataGridView1.DataSource != dtMovie)
             {
-                
-                //dtMovie.Columns["id_movie"].ColumnMapping = MappingType.Hidden;
                 dataGridView1.DataSource = dtMovie;
-                dataGridView1.Columns[0].Visible = false;
-                Console.WriteLine(dataGridView1.Columns[0].ToString());
+                columnStyle();
+                dataGridView1.Columns["subtitles"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
         }
 
         private void selectMusic_Click(object sender, EventArgs e)
         {
             if ( dataGridView1.DataSource != dtCD)
-            {
+            {          
                 dataGridView1.DataSource = dtCD;
+                columnStyle();
             }
         }
 
@@ -74,8 +80,8 @@ namespace Rental
         {
             if (dataGridView1.DataSource != dtAudiobook)
             {
-                //dataGridView1.Columns[0].Visible = false;
                 dataGridView1.DataSource = dtAudiobook;
+                columnStyle();
             }
         }
 
