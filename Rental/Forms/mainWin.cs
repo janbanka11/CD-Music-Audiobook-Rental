@@ -156,7 +156,8 @@ namespace Rental
 
         private void userSettings_Click(object sender, EventArgs e)
         {
-
+            var settingsWin = new settingsWin(userNameText);
+            settingsWin.Show();
         }
     }
 }

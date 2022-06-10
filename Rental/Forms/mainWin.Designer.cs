@@ -241,7 +241,7 @@
             this.hiLabel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.hiLabel.Font = new System.Drawing.Font("Roboto", 15F);
             this.hiLabel.ForeColor = System.Drawing.Color.White;
-            this.hiLabel.Location = new System.Drawing.Point(789, 12);
+            this.hiLabel.Location = new System.Drawing.Point(764, 21);
             this.hiLabel.Name = "hiLabel";
             this.hiLabel.Size = new System.Drawing.Size(0, 24);
             this.hiLabel.TabIndex = 47;
@@ -330,7 +330,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Rental.Properties.Resources.icons8_user_30;
-            this.pictureBox8.Location = new System.Drawing.Point(745, 3);
+            this.pictureBox8.Location = new System.Drawing.Point(720, 12);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(38, 38);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
