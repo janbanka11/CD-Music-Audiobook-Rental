@@ -1,15 +1,15 @@
-﻿# Movie / Music / Audiobook Rental
+# Movie / Music / Audiobook Rental
 Desktop app for renting movies, music and audiobooks.
 
 
-## Video showcase 
+## Video showcase
 [![CLICK TO WATCH](https://i9.ytimg.com/vi/X2BJd4zYdFU/mqdefault.jpg?v=62a4dbfd&sqp=CKS3k5UG&rs=AOn4CLANqMOmKUGeJONrAGCab_GgSlAqKw)](https://www.youtube.com/watch?v=X2BJd4zYdFU)
 
 ## Features
 
 - User registration
 - Logging in
-- View elements acquired from database 
+- View elements acquired from database
 - Rent movie, music and audiobook listed from database
 - Return rented element
 - Change attributes such as first name, password etc. set back at registration stage

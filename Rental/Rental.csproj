@@ -167,7 +167,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
     <None Include="RentalDBDataSet.xsc">
       <DependentUpon>RentalDBDataSet.xsd</DependentUpon>
     </None>
