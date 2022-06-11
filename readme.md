@@ -22,8 +22,8 @@ Desktop app for renting movies, music and audiobooks.
 
 ## Installation
 
-Download `setup.exe` from [here](https://drive.google.com/file/d/1c-I4squxp58CDDKs0zeOV4vKMB7CSlkB/view?usp=sharing).
-Run the wizard and follow the steps.
+Download installator package from [here](https://drive.google.com/file/d/1gb8tm5h2mlkXZxTmC_PI7uRlIKWPYR1B/view?usp=sharing).
+Run `setup.exe` and follow the steps.
 Then go to installation directory (by default it's C:\Program Files (x86)\janbanka11\Movie-Music-Audiobook Rental) and set all permissions for RentalDB.mdf and RentalDB_log.ldf. Do it by right clicking on each file, then Properties &#8594; Security &#8594; Edit and allow all.
 
 ## Author
