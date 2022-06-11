@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Runtime.InteropServices;
 namespace Rental
 {
     //main window with all functionality that shows up after logging in
@@ -30,12 +31,6 @@ namespace Rental
                 userpictureBox.Location = new Point(userpictureBox.Location.X - userName.Length, userpictureBox.Location.Y);
                 hiLabel.Location = new Point(hiLabel.Location.X - userName.Length - 10, hiLabel.Location.Y);
             }
-            //more settings for user named admin
-            if (userName != "admin")
-            {
-                selectSettings.Enabled = false;
-                selectSettings.Visible = false;
-            }
 
             userNameText = userName;
         }
@@ -47,7 +42,7 @@ namespace Rental
             new RentalDBDataSetTableAdapters.CD_DISCTableAdapter().Fill(dtCD);
             new RentalDBDataSetTableAdapters.AUDIOBOOKTableAdapter().Fill(dtAudiobook);
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 14.5F, FontStyle.Regular);
-
+            Console.WriteLine(RuntimeInformation.FrameworkDescription);
             dateTimePicker.Value = DateTime.Now;
            
         }
@@ -190,9 +185,6 @@ namespace Rental
             settingsWin.Show();
         }
 
-        private void selectSettings_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

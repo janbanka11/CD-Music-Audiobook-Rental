@@ -133,6 +133,16 @@ namespace Rental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_admin_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-admin-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_audio_book_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-audio-book-100", resourceCulture);

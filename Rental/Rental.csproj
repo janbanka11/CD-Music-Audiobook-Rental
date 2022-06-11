@@ -167,6 +167,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="RentalDBDataSet.xsc">
       <DependentUpon>RentalDBDataSet.xsd</DependentUpon>
     </None>
@@ -251,6 +252,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RentalDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-admin-64.png" />
     <None Include="Resources\icons8-user-90.png" />
     <None Include="Resources\icons8-user-30.png" />
     <None Include="Resources\background2.png" />

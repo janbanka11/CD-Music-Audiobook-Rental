@@ -47,7 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.selectMovie = new System.Windows.Forms.Button();
             this.selectMusic = new System.Windows.Forms.Button();
-            this.selectSettings = new System.Windows.Forms.Button();
             this.helloLabel = new System.Windows.Forms.Label();
             this.hiLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -89,7 +88,6 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.selectMovie);
             this.panel1.Controls.Add(this.selectMusic);
-            this.panel1.Controls.Add(this.selectSettings);
             this.panel1.Controls.Add(this.helloLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -298,24 +296,6 @@
             this.selectMusic.UseVisualStyleBackColor = false;
             this.selectMusic.Click += new System.EventHandler(this.selectMusic_Click);
             // 
-            // selectSettings
-            // 
-            this.selectSettings.BackColor = System.Drawing.Color.Transparent;
-            this.selectSettings.BackgroundImage = global::Rental.Properties.Resources.icons8_settings_50;
-            this.selectSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.selectSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selectSettings.FlatAppearance.BorderSize = 0;
-            this.selectSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectSettings.Font = new System.Drawing.Font("Roboto", 17F);
-            this.selectSettings.ForeColor = System.Drawing.Color.White;
-            this.selectSettings.Location = new System.Drawing.Point(4, 490);
-            this.selectSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.selectSettings.Name = "selectSettings";
-            this.selectSettings.Size = new System.Drawing.Size(33, 29);
-            this.selectSettings.TabIndex = 33;
-            this.selectSettings.UseVisualStyleBackColor = false;
-            this.selectSettings.Click += new System.EventHandler(this.selectSettings_Click);
-            // 
             // helloLabel
             // 
             this.helloLabel.AutoSize = true;
@@ -499,7 +479,6 @@
         private System.Windows.Forms.Button selectAudiobook;
         private System.Windows.Forms.Button selectMusic;
         private System.Windows.Forms.Button selectMovie;
-        private System.Windows.Forms.Button selectSettings;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
