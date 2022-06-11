@@ -48,7 +48,7 @@ namespace Rental
 
         private void returnButton_Click(object sender, EventArgs e)
         {
-            DialogResult rentDialog = MessageBox.Show("Are you sure?", "Movie return", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult rentDialog = MessageBox.Show("Are you sure?", "Audiobook return", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rentDialog == DialogResult.Yes)
             {
                 var cellValue = dataGridViewAudiobook.Rows[dataGridViewAudiobook.CurrentCell.RowIndex].Cells[0].Value.ToString();

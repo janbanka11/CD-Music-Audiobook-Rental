@@ -33,7 +33,6 @@ namespace Rental
             this.firstNameCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lastNamecheckBox = new System.Windows.Forms.CheckBox();
-            this.userNamecheckBox = new System.Windows.Forms.CheckBox();
             this.agecheckBox = new System.Windows.Forms.CheckBox();
             this.passwordcheckBox = new System.Windows.Forms.CheckBox();
             this.phonecheckBox = new System.Windows.Forms.CheckBox();
@@ -41,8 +40,6 @@ namespace Rental
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lastNametextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.userNametextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.agetextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,7 +75,7 @@ namespace Rental
             // lastNamecheckBox
             // 
             this.lastNamecheckBox.AutoSize = true;
-            this.lastNamecheckBox.Location = new System.Drawing.Point(201, 80);
+            this.lastNamecheckBox.Location = new System.Drawing.Point(201, 74);
             this.lastNamecheckBox.Name = "lastNamecheckBox";
             this.lastNamecheckBox.Size = new System.Drawing.Size(103, 23);
             this.lastNamecheckBox.TabIndex = 2;
@@ -86,21 +83,10 @@ namespace Rental
             this.lastNamecheckBox.UseVisualStyleBackColor = true;
             this.lastNamecheckBox.CheckedChanged += new System.EventHandler(this.lastNamecheckBox_CheckedChanged);
             // 
-            // userNamecheckBox
-            // 
-            this.userNamecheckBox.AutoSize = true;
-            this.userNamecheckBox.Location = new System.Drawing.Point(201, 109);
-            this.userNamecheckBox.Name = "userNamecheckBox";
-            this.userNamecheckBox.Size = new System.Drawing.Size(99, 23);
-            this.userNamecheckBox.TabIndex = 3;
-            this.userNamecheckBox.Text = "Username";
-            this.userNamecheckBox.UseVisualStyleBackColor = true;
-            this.userNamecheckBox.CheckedChanged += new System.EventHandler(this.userNamecheckBox_CheckedChanged);
-            // 
             // agecheckBox
             // 
             this.agecheckBox.AutoSize = true;
-            this.agecheckBox.Location = new System.Drawing.Point(201, 167);
+            this.agecheckBox.Location = new System.Drawing.Point(201, 97);
             this.agecheckBox.Name = "agecheckBox";
             this.agecheckBox.Size = new System.Drawing.Size(55, 23);
             this.agecheckBox.TabIndex = 4;
@@ -111,7 +97,7 @@ namespace Rental
             // passwordcheckBox
             // 
             this.passwordcheckBox.AutoSize = true;
-            this.passwordcheckBox.Location = new System.Drawing.Point(201, 138);
+            this.passwordcheckBox.Location = new System.Drawing.Point(201, 120);
             this.passwordcheckBox.Name = "passwordcheckBox";
             this.passwordcheckBox.Size = new System.Drawing.Size(98, 23);
             this.passwordcheckBox.TabIndex = 5;
@@ -122,7 +108,7 @@ namespace Rental
             // phonecheckBox
             // 
             this.phonecheckBox.AutoSize = true;
-            this.phonecheckBox.Location = new System.Drawing.Point(201, 196);
+            this.phonecheckBox.Location = new System.Drawing.Point(201, 143);
             this.phonecheckBox.Name = "phonecheckBox";
             this.phonecheckBox.Size = new System.Drawing.Size(131, 23);
             this.phonecheckBox.TabIndex = 6;
@@ -140,6 +126,7 @@ namespace Rental
             this.firstNametextBox.Name = "firstNametextBox";
             this.firstNametextBox.Size = new System.Drawing.Size(119, 27);
             this.firstNametextBox.TabIndex = 7;
+            this.firstNametextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -169,31 +156,12 @@ namespace Rental
             this.lastNametextBox.Name = "lastNametextBox";
             this.lastNametextBox.Size = new System.Drawing.Size(119, 27);
             this.lastNametextBox.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 19);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Username";
-            // 
-            // userNametextBox
-            // 
-            this.userNametextBox.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.userNametextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userNametextBox.Enabled = false;
-            this.userNametextBox.ForeColor = System.Drawing.Color.White;
-            this.userNametextBox.Location = new System.Drawing.Point(21, 155);
-            this.userNametextBox.Name = "userNametextBox";
-            this.userNametextBox.Size = new System.Drawing.Size(119, 27);
-            this.userNametextBox.TabIndex = 11;
+            this.lastNametextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(60, 190);
+            this.label5.Location = new System.Drawing.Point(60, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 19);
             this.label5.TabIndex = 14;
@@ -205,15 +173,18 @@ namespace Rental
             this.agetextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.agetextBox.Enabled = false;
             this.agetextBox.ForeColor = System.Drawing.Color.White;
-            this.agetextBox.Location = new System.Drawing.Point(21, 212);
+            this.agetextBox.Location = new System.Drawing.Point(21, 152);
+            this.agetextBox.MaxLength = 3;
             this.agetextBox.Name = "agetextBox";
             this.agetextBox.Size = new System.Drawing.Size(119, 27);
             this.agetextBox.TabIndex = 13;
+            this.agetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.agetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.agetextBox_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 250);
+            this.label6.Location = new System.Drawing.Point(41, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 19);
             this.label6.TabIndex = 16;
@@ -225,15 +196,17 @@ namespace Rental
             this.passwordtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordtextBox.Enabled = false;
             this.passwordtextBox.ForeColor = System.Drawing.Color.White;
-            this.passwordtextBox.Location = new System.Drawing.Point(21, 272);
+            this.passwordtextBox.Location = new System.Drawing.Point(21, 212);
             this.passwordtextBox.Name = "passwordtextBox";
+            this.passwordtextBox.PasswordChar = '*';
             this.passwordtextBox.Size = new System.Drawing.Size(119, 27);
             this.passwordtextBox.TabIndex = 15;
+            this.passwordtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 306);
+            this.label7.Location = new System.Drawing.Point(28, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 19);
             this.label7.TabIndex = 18;
@@ -245,15 +218,18 @@ namespace Rental
             this.phonetextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phonetextBox.Enabled = false;
             this.phonetextBox.ForeColor = System.Drawing.Color.White;
-            this.phonetextBox.Location = new System.Drawing.Point(21, 328);
+            this.phonetextBox.Location = new System.Drawing.Point(21, 275);
+            this.phonetextBox.MaxLength = 9;
             this.phonetextBox.Name = "phonetextBox";
             this.phonetextBox.Size = new System.Drawing.Size(119, 27);
             this.phonetextBox.TabIndex = 17;
+            this.phonetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.phonetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phonetextBox_KeyPress);
             // 
             // confirmPasswordLabel
             // 
             this.confirmPasswordLabel.AutoSize = true;
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(152, 250);
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(149, 190);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
             this.confirmPasswordLabel.Size = new System.Drawing.Size(138, 19);
             this.confirmPasswordLabel.TabIndex = 20;
@@ -264,12 +240,13 @@ namespace Rental
             // 
             this.confPasswordtextBox.BackColor = System.Drawing.SystemColors.HotTrack;
             this.confPasswordtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.confPasswordtextBox.Enabled = false;
             this.confPasswordtextBox.ForeColor = System.Drawing.Color.White;
-            this.confPasswordtextBox.Location = new System.Drawing.Point(156, 272);
+            this.confPasswordtextBox.Location = new System.Drawing.Point(153, 212);
             this.confPasswordtextBox.Name = "confPasswordtextBox";
+            this.confPasswordtextBox.PasswordChar = '*';
             this.confPasswordtextBox.Size = new System.Drawing.Size(119, 27);
             this.confPasswordtextBox.TabIndex = 19;
+            this.confPasswordtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.confPasswordtextBox.Visible = false;
             // 
             // confirmChangesButton
@@ -280,20 +257,21 @@ namespace Rental
             this.confirmChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmChangesButton.Font = new System.Drawing.Font("Roboto", 15F);
             this.confirmChangesButton.ForeColor = System.Drawing.Color.White;
-            this.confirmChangesButton.Location = new System.Drawing.Point(126, 384);
+            this.confirmChangesButton.Location = new System.Drawing.Point(126, 326);
             this.confirmChangesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.confirmChangesButton.Name = "confirmChangesButton";
             this.confirmChangesButton.Size = new System.Drawing.Size(206, 39);
             this.confirmChangesButton.TabIndex = 31;
             this.confirmChangesButton.Text = "Confirm changes";
             this.confirmChangesButton.UseVisualStyleBackColor = false;
+            this.confirmChangesButton.Click += new System.EventHandler(this.confirmChangesButton_Click);
             // 
             // settingsWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(449, 444);
+            this.ClientSize = new System.Drawing.Size(449, 381);
             this.Controls.Add(this.confirmChangesButton);
             this.Controls.Add(this.confirmPasswordLabel);
             this.Controls.Add(this.confPasswordtextBox);
@@ -303,8 +281,6 @@ namespace Rental
             this.Controls.Add(this.passwordtextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.agetextBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.userNametextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lastNametextBox);
             this.Controls.Add(this.label2);
@@ -312,7 +288,6 @@ namespace Rental
             this.Controls.Add(this.phonecheckBox);
             this.Controls.Add(this.passwordcheckBox);
             this.Controls.Add(this.agecheckBox);
-            this.Controls.Add(this.userNamecheckBox);
             this.Controls.Add(this.lastNamecheckBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.firstNameCheckBox);
@@ -333,7 +308,6 @@ namespace Rental
         private System.Windows.Forms.CheckBox firstNameCheckBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox lastNamecheckBox;
-        private System.Windows.Forms.CheckBox userNamecheckBox;
         private System.Windows.Forms.CheckBox agecheckBox;
         private System.Windows.Forms.CheckBox passwordcheckBox;
         private System.Windows.Forms.CheckBox phonecheckBox;
@@ -341,8 +315,6 @@ namespace Rental
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox lastNametextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox userNametextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox agetextBox;
         private System.Windows.Forms.Label label6;

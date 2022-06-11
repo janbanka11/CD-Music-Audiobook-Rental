@@ -172,8 +172,8 @@
     </None>
     <None Include="RentalDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RentalDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>RentalDBDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="RentalDBDataSet.xss">
       <DependentUpon>RentalDBDataSet.xsd</DependentUpon>
@@ -251,6 +251,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RentalDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-user-90.png" />
     <None Include="Resources\icons8-user-30.png" />
     <None Include="Resources\background2.png" />
     <None Include="Resources\logo2.png" />

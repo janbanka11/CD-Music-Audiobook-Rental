@@ -77,10 +77,10 @@ namespace Rental
             this.musicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.musicButton.Font = new System.Drawing.Font("Roboto", 18F);
             this.musicButton.ForeColor = System.Drawing.Color.White;
-            this.musicButton.Location = new System.Drawing.Point(4, 210);
+            this.musicButton.Location = new System.Drawing.Point(0, 210);
             this.musicButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.musicButton.Name = "musicButton";
-            this.musicButton.Size = new System.Drawing.Size(67, 47);
+            this.musicButton.Size = new System.Drawing.Size(71, 47);
             this.musicButton.TabIndex = 29;
             this.musicButton.UseVisualStyleBackColor = false;
             this.musicButton.Click += new System.EventHandler(this.musicButton_Click);
@@ -95,10 +95,10 @@ namespace Rental
             this.movieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.movieButton.Font = new System.Drawing.Font("Roboto", 18F);
             this.movieButton.ForeColor = System.Drawing.Color.White;
-            this.movieButton.Location = new System.Drawing.Point(4, 89);
+            this.movieButton.Location = new System.Drawing.Point(0, 89);
             this.movieButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.movieButton.Name = "movieButton";
-            this.movieButton.Size = new System.Drawing.Size(67, 54);
+            this.movieButton.Size = new System.Drawing.Size(71, 54);
             this.movieButton.TabIndex = 28;
             this.movieButton.UseVisualStyleBackColor = false;
             this.movieButton.Click += new System.EventHandler(this.movieButton_Click);
@@ -108,7 +108,7 @@ namespace Rental
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(695, 485);
+            this.ClientSize = new System.Drawing.Size(747, 485);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Roboto", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

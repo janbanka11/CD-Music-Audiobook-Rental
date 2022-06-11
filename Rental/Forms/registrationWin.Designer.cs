@@ -92,7 +92,7 @@
             this.confPassword.Name = "confPassword";
             this.confPassword.PasswordChar = '*';
             this.confPassword.Size = new System.Drawing.Size(230, 23);
-            this.confPassword.TabIndex = 15;
+            this.confPassword.TabIndex = 7;
             this.confPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -119,7 +119,7 @@
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(230, 23);
-            this.password.TabIndex = 13;
+            this.password.TabIndex = 6;
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -146,7 +146,7 @@
             this.firstName.MinimumSize = new System.Drawing.Size(230, 30);
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(230, 23);
-            this.firstName.TabIndex = 11;
+            this.firstName.TabIndex = 1;
             this.firstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -202,7 +202,7 @@
             this.lastName.MinimumSize = new System.Drawing.Size(230, 30);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(230, 23);
-            this.lastName.TabIndex = 19;
+            this.lastName.TabIndex = 2;
             this.lastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
@@ -229,7 +229,7 @@
             this.telNumber.MinimumSize = new System.Drawing.Size(230, 30);
             this.telNumber.Name = "telNumber";
             this.telNumber.Size = new System.Drawing.Size(230, 23);
-            this.telNumber.TabIndex = 21;
+            this.telNumber.TabIndex = 5;
             this.telNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.telNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telNumber_KeyPress);
             // 
@@ -257,7 +257,7 @@
             this.age.MinimumSize = new System.Drawing.Size(66, 30);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(82, 23);
-            this.age.TabIndex = 23;
+            this.age.TabIndex = 4;
             this.age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.age_KeyPress);
             // 
@@ -297,7 +297,7 @@
             this.userName.MinimumSize = new System.Drawing.Size(230, 30);
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(230, 23);
-            this.userName.TabIndex = 25;
+            this.userName.TabIndex = 3;
             this.userName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1

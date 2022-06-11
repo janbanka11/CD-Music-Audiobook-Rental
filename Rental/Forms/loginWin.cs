@@ -23,16 +23,10 @@ namespace Rental
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
-
-
-            //var usernameSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
-            //    .GetDataByUsername(username.Text);
             var usernameSearch = new RentalDBDataSetTableAdapters.CUSTOMERTableAdapter()
                 .GetDataByUsername(username.Text);
             var passwordSearch = new RentalDBDataSetTableAdapters.CUSTOMERTableAdapter()
-                .GetDataByPassword(password.Text);
-            //var passwordSearch = new RentalDataSetTableAdapters.CUSTOMERTableAdapter()
-             //   .GetDataByPassword(password.Text);
+                .GetDataByPassword(password.Text,username.Text);
 
             if (usernameSearch.Count > 0 && passwordSearch.Count > 0)
             {
